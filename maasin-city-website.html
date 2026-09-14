@@ -64,8 +64,8 @@
         --ink-3: #6b7f86;
         --rule: #d8deda;
         --rule-soft: #e7ebe7;
-        --primary: #D21C5F;
-        --secondary: #A5102A;
+        --primary: #d21c5f;
+        --secondary: #a5102a;
         --sea-wash: #efdfe1;
         --sun: #e07b39;
         --sun-wash: #fbeade;
@@ -1236,7 +1236,7 @@
           status: "open",
           desc: "A shrine set inside a cave — the most distinctive of the city's four pilgrimage sites.",
           photo: "Cave shrine entrance and interior",
-          img: "assets/images/monte-cueva.jpg"
+          img: "assets/images/monte-cueva.jpg",
         },
         {
           name: "Jalleca Hill Shrine",
@@ -1245,7 +1245,7 @@
           status: "open",
           desc: "An elevated shrine within the urban core, a short walk from the cathedral, with a view over the bay.",
           photo: "The climb and the view from the hill",
-          img: "assets/images/jalleca-hills.jpg"
+          img: "assets/images/jalleca-hills.jpg",
         },
         {
           name: "San Francisco Xavier Shrine",
@@ -1254,7 +1254,7 @@
           status: "open",
           desc: "The upland shrine, reached by a climb, with the coastal city spread out below.",
           photo: "Ascent, summit and panorama",
-          img: "assets/images/hanginan.jpg"
+          img: "assets/images/hanginan.jpg",
         },
 
         // --- Eco-adventure / emerging (CDP Table 54) ---
@@ -1265,7 +1265,7 @@
           status: "open",
           desc: "Land, water and aero sports for all ages — camping, biking, hiking, sky biking, bungee bounce, net trampoline, zipline, swimming pool and a mountain view deck.",
           photo: "Zipline, view deck and trails",
-          img: "assets/images/danao.jpg"
+          img: "assets/images/danao.jpg",
         },
         {
           name: "Guinsohotan Cave, Falls & Lagoon",
@@ -1274,7 +1274,7 @@
           status: "open",
           desc: "A large subterranean cave 15 km from the city centre at 276 m above sea level — in-cave waterfalls, bats and rock formations, cascading out into a natural lagoon. Reached from Brgy. Maria Clara by habal-habal, then on foot.",
           photo: "Cave interior, waterfall and lagoon",
-          img: "assets/images/guinsohotan.jpg"
+          img: "assets/images/guinsohotan.jpg",
         },
         {
           name: "Mahayahay Mangrove Eco-Park",
@@ -1291,7 +1291,7 @@
           status: "open",
           desc: "Spring resort on 2,500 sqm with two pools fed by cool natural springs.",
           photo: "Spring-fed pools",
-          img: "assets/images/hapitan.jpg"
+          img: "assets/images/hapitan.jpg",
         },
         {
           name: "Dongon Hillside Resort",
@@ -1531,46 +1531,204 @@
 
       const LAND_ROUTES = [
         {
-          dest: "Ormoc City",
-          mode: "Bus / Van",
-          time: "≈ 2 hours",
-          note: "Connections onward to Cebu by fastcraft",
-        },
-        {
-          dest: "Tacloban City",
-          mode: "Bus / Van",
-          time: "≈ 3 hours",
-          note: "Nearest commercial airport (DZR)",
-        },
-        {
+          type: "Van",
           dest: "Sogod",
-          mode: "Bus / Van / Jeepney",
-          time: "TBC",
-          note: "Eastern Southern Leyte connections",
+          via: "",
+          first: "4:00 AM",
+          last: "2:45 PM",
+          fare: 150,
+          rateType: "Standard",
+          ops: "Mama Mary / LSTC / ULTC / PODTC / PATCORP / SWELVOTCO / RELSTRANSCO",
         },
         {
-          dest: "Padre Burgos",
-          mode: "Van / Jeepney",
-          time: "TBC",
-          note: "Dive sites",
+          type: "Multicab",
+          dest: "Hilongos",
+          via: "",
+          first: "First In",
+          last: "First Out",
+          fare: 80,
+          rateType: "Standard",
+          ops: "",
         },
         {
+          type: "Multicab",
+          dest: "Bato",
+          via: "",
+          first: "First In",
+          last: "First Out",
+          fare: 65,
+          rateType: "Standard",
+          ops: "",
+        },
+        {
+          type: "Multicab",
+          dest: "Matalom",
+          via: "",
+          first: "First In",
+          last: "First Out",
+          fare: 55,
+          rateType: "Standard",
+          ops: "",
+        },
+        {
+          type: "Bus",
+          dest: "Panaon",
+          via: "Malitbog",
+          first: "3:30 AM",
+          last: "4:00 PM",
+          fare: 250,
+          rateType: "Aircon",
+          ops: "Saint Francis / LEAM / CLEMROSE / LABOON EXPRESS",
+        },
+        {
+          type: "Bus",
+          dest: "Panaon",
+          via: "Malitbog",
+          first: "3:30 AM",
+          last: "4:00 PM",
+          fare: 200,
+          rateType: "Ordinary",
+          ops: "Saint Francis / LEAM / CLEMROSE / LABOON EXPRESS",
+        },
+        {
+          type: "Van",
+          dest: "Tacloban",
+          via: "Baybay",
+          first: "2:25 AM",
+          last: "2:45 PM",
+          fare: 350,
+          rateType: "Standard",
+          ops: "Duptours / Van-Van / SWELVOTCO",
+        },
+        {
+          type: "Van",
+          dest: "Baybay",
+          via: "",
+          first: "2:25 AM",
+          last: "2:45 PM",
+          fare: 200,
+          rateType: "Standard",
+          ops: "Duptours / Van-Van / SWELVOTCO",
+        },
+        {
+          type: "Bus",
+          dest: "Pacific",
+          via: "Bato",
+          first: "4:30 AM",
+          last: "2:00 PM",
+          fare: 320,
+          rateType: "Aircon",
+          ops: "LEAM / HOLLY QUEEN / LOUREDON / PODTC / QJJ / MTM",
+        },
+        {
+          type: "Bus",
+          dest: "Pacific",
+          via: "Bato",
+          first: "4:30 AM",
+          last: "2:00 PM",
+          fare: 250,
+          rateType: "Ordinary",
+          ops: "LEAM / HOLLY QUEEN / LOUREDON / PODTC / QJJ / MTM",
+        },
+        {
+          type: "Van",
+          dest: "Ormoc",
+          via: "",
+          first: "First In",
+          last: "First Out",
+          fare: 250,
+          rateType: "Standard",
+          ops: "",
+        },
+        {
+          type: "Van",
+          dest: "San Ricardo",
+          via: "Malitbog",
+          first: "",
+          last: "4:30 PM",
+          fare: 350,
+          rateType: "Standard",
+          ops: "LSTC",
+        },
+        {
+          type: "Multicab",
+          dest: "P. Burgos",
+          via: "",
+          first: "First In",
+          last: "First Out",
+          fare: 50,
+          rateType: "Standard",
+          ops: "",
+        },
+        {
+          type: "Multicab",
           dest: "Macrohon",
-          mode: "Jeepney / Van",
-          time: "TBC",
-          note: "Adjacent municipality",
+          via: "",
+          first: "First In",
+          last: "First Out",
+          fare: 30,
+          rateType: "Standard",
+          ops: "",
         },
         {
-          dest: "Liloan / Pintuyan",
-          mode: "Bus / Van",
-          time: "TBC",
-          note: "Onward ferry to Surigao / Mindanao",
+          type: "Van",
+          dest: "Pacific",
+          via: "Bato",
+          first: "3:30 AM",
+          last: "5:00 PM",
+          fare: 350,
+          rateType: "Standard",
+          ops: "Mama Mary / Amazing Grace",
         },
+      ];
+
+      const MOTORCAB_FARES = [
         {
-          dest: "Bato, Leyte",
-          mode: "Bus / Van",
-          time: "TBC",
-          note: "Northbound route",
+          route:
+            "City Proper (Cockpit Arena Comabado to Canturing Bridge Mambajao)",
+          fare: 11,
+          senior: 8.8,
+        },
+        { route: "Terminal to Pasay", fare: 19, senior: 15.2 },
+        { route: "Terminal to Maria Clara", fare: 19, senior: 15.2 },
+        { route: "Terminal to Ibarra", fare: 18, senior: 14.4 },
+        { route: "Terminal to Isagani (Pugaling)", fare: 18, senior: 14.4 },
+        {
+          route: "Terminal to Asuncion Capitol or NFA",
+          fare: 17,
+          senior: 13.6,
+        },
+        { route: "Terminal to Canturing Proper", fare: 18, senior: 14.4 },
+        { route: "Terminal to Soro-soro", fare: 18, senior: 14.4 },
+        { route: "Terminal to Nasaug", fare: 19, senior: 15.2 },
+        { route: "Terminal to Princesa", fare: 23, senior: 18.4 },
+        { route: "Terminal to Dongon", fare: 27, senior: 21.6 },
+        { route: "Terminal to Bagtican", fare: 27, senior: 21.6 },
+        { route: "Terminal to Laboon", fare: 28, senior: 22.4 },
+        { route: "Terminal to San Jose", fare: 32, senior: 25.6 },
+        { route: "Terminal to San Rafael", fare: 40, senior: 32.0 },
+        { route: "Terminal to Citi Hardware", fare: 13, senior: 10.4 },
+        { route: "Terminal to Lib-og", fare: 18, senior: 14.4 },
+        { route: "Terminal to Badiang", fare: 24, senior: 19.2 },
+        { route: "Terminal to Mahayahay", fare: 25, senior: 20.0 },
+        { route: "Terminal to Lundag (Manhilo Int.)", fare: 29, senior: 23.2 },
+        { route: "Terminal to Manhilo (Highway)", fare: 26, senior: 20.8 },
+        { route: "Terminal to Lanao", fare: 29, senior: 23.2 },
+        { route: "Terminal to Tam-is", fare: 27, senior: 21.6 },
+        { route: "Terminal to Tawid", fare: 28, senior: 22.4 },
+        { route: "Terminal to Panan-awan (Crossing)", fare: 29, senior: 23.2 },
+        { route: "Terminal to Panan-awan (Interior)", fare: 32, senior: 25.6 },
+        { route: "Terminal to Panan-awan (Airport)", fare: 29, senior: 23.2 },
+        { route: "Terminal to Sto. Rosario", fare: 29, senior: 23.2 },
+        { route: "Terminal to Cabulihan", fare: 31, senior: 24.8 },
+        { route: "Terminal to Oslao", fare: 32, senior: 25.6 },
+        { route: "Terminal to Guadalupe", fare: 32, senior: 25.6 },
+        { route: "Terminal to Bilbol", fare: 32, senior: 25.6 },
+        { route: "Terminal to Tam-is SLSU Campus", fare: 44, senior: 35.2 },
+        {
+          route: "National Road in Tam-is to SLSU Campus",
+          fare: 17,
+          senior: 13.6,
         },
       ];
 
@@ -2013,7 +2171,7 @@
             ? `<span class="tag badge-s">Opening soon</span>`
             : `<span class="tag badge-e">Open to visitors</span>`;
         return `<article class="card">
-    ${photo(d.photo, '', d.img)}
+    ${photo(d.photo, "", d.img)}
     <div class="cb">
       <h3>${esc(d.name)}</h3>
       <div class="loc">📍 ${esc(d.brgy)}</div>
@@ -2120,8 +2278,8 @@
 
     <div id="t-land" class="tabpane hidden">
       <div class="tablewrap"><table>
-        <thead><tr><th>Destination</th><th>Mode</th><th>Travel time</th><th>Notes</th></tr></thead>
-        <tbody>${LAND_ROUTES.map((r) => `<tr><td><b>${esc(r.dest)}</b></td><td>${esc(r.mode)}</td><td class="num">${esc(r.time)}</td><td class="muted">${esc(r.note)}</td></tr>`).join("")}</tbody>
+        <thead><tr><th>Type</th><th>Destination</th><th>Via</th><th>First Trip</th><th>Last Trip</th><th>Fare</th><th>Rate Type</th><th>Operators</th></tr></thead>
+        <tbody>${LAND_ROUTES.map((r) => `<tr><td><b>${esc(r.type)}</b></td><td>${esc(r.dest)}</td><td>${esc(r.via)}</td><td>${esc(r.first)}</td><td>${esc(r.last)}</td><td class="num">${esc(r.fare)}</td><td>${esc(r.rateType)}</td><td class="muted">${esc(r.ops)}</td></tr>`).join("")}</tbody>
       </table></div>
       <div class="note"><b>Needs filling in:</b> confirmed travel times, fares, terminal bay assignments and first/last trip times from the Maasin Integrated Bus Terminal. ${todo("ADD FARES & TIMES")}</div>
       <div class="sechead" style="margin-top:34px"><div><div class="eyebrow">Terminal</div><h2>Maasin Integrated Bus Terminal</h2></div></div>
@@ -2135,27 +2293,13 @@
       <div class="sechead"><div><div class="eyebrow">Getting around</div><h2>Motorcab</h2>
       <p>The motorcab is how most people move around Maasin. Flag one down anywhere along the main roads, or hire one for a longer trip.</p></div></div>
       <div class="tablewrap"><table>
-        <thead><tr><th>Trip type</th><th>Fare</th><th>Notes</th></tr></thead>
+        <thead><tr><th>Route</th><th>Fare</th><th>Senior</th></tr></thead>
         <tbody>
-          <tr><td><b>Minimum fare — within the poblacion</b></td><td class="num">${todo("ADD FARE")}</td><td class="muted">Per passenger, first kilometres</td></tr>
-          <tr><td><b>Per additional kilometre</b></td><td class="num">${todo("ADD FARE")}</td><td class="muted">Per passenger</td></tr>
-          <tr><td><b>Student / senior / PWD discount</b></td><td class="num">${todo("ADD RATE")}</td><td class="muted">Present valid ID</td></tr>
-          <tr><td><b>Special trip (whole cab)</b></td><td class="num">${todo("ADD FARE")}</td><td class="muted">Agree the fare before boarding</td></tr>
-          <tr><td><b>Port / terminal to poblacion</b></td><td class="num">${todo("ADD FARE")}</td><td class="muted">Common visitor trip</td></tr>
+          ${MOTORCAB_FARES.map((r) => `<tr><td><b>${esc(r.route)}</b></td><td>${esc(r.fare)}</td><td class="num">${esc(r.senior)}</td></tr>`).join("")}
         </tbody>
       </table></div>
       <div class="note"><b>Publish the official fare matrix here.</b> Visitors are most often overcharged on the port-to-hotel trip, and a fare table on the city's own website is the simplest protection there is. Source it from the City Transport / LTFRB-approved matrix and show the approval date so it carries authority.</div>
 
-      <div class="sechead" style="margin-top:34px"><div><div class="eyebrow">Public utility jeepney</div><h2>PUJ routes to the barangays</h2></div></div>
-      <div class="tablewrap"><table>
-        <thead><tr><th>Route</th><th>Barangays served</th><th>Fare</th><th>Trip times</th></tr></thead>
-        <tbody>
-          <tr><td><b>${todo("ROUTE NAME")}</b></td><td class="muted">${todo("BARANGAYS")}</td><td class="num">${todo("FARE")}</td><td class="muted">${todo("TIMES")}</td></tr>
-          <tr><td><b>${todo("ROUTE NAME")}</b></td><td class="muted">${todo("BARANGAYS")}</td><td class="num">${todo("FARE")}</td><td class="muted">${todo("TIMES")}</td></tr>
-          <tr><td><b>${todo("ROUTE NAME")}</b></td><td class="muted">${todo("BARANGAYS")}</td><td class="num">${todo("FARE")}</td><td class="muted">${todo("TIMES")}</td></tr>
-        </tbody>
-      </table></div>
-      <div class="note"><b>Structure is ready, content is not.</b> Supply the approved PUJ route list — route name or number, barangays served, fare, and first and last trip. With 60 rural barangays this is the single most useful page on the site for residents, not just visitors, so it is worth getting complete. A route map graphic should sit above this table.</div>
     </div>
   </section>
 </div>`;
