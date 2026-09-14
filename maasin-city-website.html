@@ -324,6 +324,7 @@ body.locked{overflow:hidden}
       <a href="#/accommodation" data-r="/accommodation">Accommodation</a>
       <a href="#/emergency" data-r="/emergency" class="em">Emergency</a>
     </nav>
+    <button id="langToggle" class="chip" type="button" aria-pressed="false" onclick="toggleLang()">EN / BI</button>
   </div>
 </header>
 
@@ -357,6 +358,36 @@ body.locked{overflow:hidden}
    CMS collection or API response without touching the markup.
    ============================================================ */
 
+/* ---------------- BILINGUAL SUPPORT (EN / Bisaya) ----------------
+   LANG holds the active language, remembered across visits.
+   t(obj) reads the field for the current language, falling back
+   to English if a Bisaya translation hasn't been added yet — so
+   arrays that aren't translated yet don't break anything.
+   ------------------------------------------------------------- */
+let LANG = localStorage.getItem('maasin_lang') || 'en';
+const tr = (field) => (typeof field === 'object' && field !== null) ? (field[LANG] || field.en) : field;
+
+const NAV_LABELS = [
+  {r:'/',               en:'Home',                 bi:'Panimalay'},
+  {r:'/destinations',   en:'Tourist Destinations',  bi:'Mga Dapit nga Bisitahan'},
+  {r:'/transportation', en:'Transportation',        bi:'Transportasyon'},
+  {r:'/accommodation',  en:'Accommodation',         bi:'Kadangpan'},
+  {r:'/emergency',      en:'Emergency',             bi:'Emerhensya'}
+];
+function applyNavLang(){
+  document.querySelectorAll('#nav a[data-r]').forEach(a=>{
+    const entry = NAV_LABELS.find(n=>n.r===a.dataset.r);
+    if (entry) a.textContent = tr(entry);
+  });
+  const lb = document.getElementById('langToggle');
+  if (lb) lb.setAttribute('aria-pressed', LANG==='bi' ? 'true' : 'false');
+}
+function toggleLang(){
+  LANG = (LANG==='en') ? 'bi' : 'en';
+  localStorage.setItem('maasin_lang', LANG);
+  applyNavLang();
+  route();
+}
 
 const DESTINATIONS = [
   // --- Pilgrimage (CDP Table 56) ---
@@ -539,19 +570,34 @@ const todo  = t => `<span class="todo">${esc(t)}</span>`;
 
 const CATS = {pilgrimage:"Pilgrimage", adventure:"Nature & Adventure", beach:"Beaches & Resorts", park:"Parks & City", farm:"Agri-tourism"};
 
+/* Hero copy — the first thing every visitor reads, so it's translated first.
+   NOTE: the Bisaya text below is a starting draft, not verified — have a
+   native Southern Leyte Bisaya speaker check it before this goes live. */
+const HERO = {
+  kicker: {en:"City Government of Maasin · Southern Leyte", bi:"Gobyerno sa Siyudad sa Maasin · Habagatang Leyte"},
+  h1:     {en:"Welcome to Maasin City!", bi:"Maayong Pag-abot sa Maasin City!"},
+  lead:   {en:"The City of Faith and capital of Southern Leyte — declared a Tourism Zone under Republic Act No. 12236. Four pilgrimage shrines, caves and waterfalls, a coastline on the Mindanao Sea, and the gateway to the whole province.",
+           bi:"Ang Dakbayan sa Pagtuo ug kapital sa Habagatang Leyte — gideklarar nga Tourism Zone ubos sa Republic Act No. 12236. Upat ka dalangpanan sa pagpanumpay, mga langub ug lugbay, baybayon sa Dagat Mindanao, ug ganghaan padulong sa tibuok probinsya."},
+  badge1: {en:"Capital of Southern Leyte", bi:"Kapital sa Habagatang Leyte"},
+  badge2: {en:"Tourism Zone · R.A. 12236", bi:"Tourism Zone · R.A. 12236"},
+  badge3: {en:"70 Barangays", bi:"70 ka Barangay"},
+  ctaGo:  {en:"Explore destinations →", bi:"Susiha ang mga dapit →"},
+  ctaHow: {en:"How to get here", bi:"Giunsa pag-abot"}
+};
+
 /* ---------------- HOME ---------------- */
 function home(){
   return `
 <section class="hero">
   <div class="photo" role="presentation"></div>
   <div class="shell">
-    <div class="kicker">City Government of Maasin · Southern Leyte</div>
-    <h1>Welcome to Maasin City!<em>Dajon Kamo!</em></h1>
-    <p class="lead">The City of Faith and capital of Southern Leyte — declared a Tourism Zone under Republic Act No. 12236. Four pilgrimage shrines, caves and waterfalls, a coastline on the Mindanao Sea, and the gateway to the whole province.</p>
-    <div class="badges"><span>Capital of Southern Leyte</span><span>Tourism Zone · R.A. 12236</span><span>70 Barangays</span></div>
+    <div class="kicker">${tr(HERO.kicker)}</div>
+    <h1>${tr(HERO.h1)}<em>Dajon Kamo!</em></h1>
+    <p class="lead">${tr(HERO.lead)}</p>
+    <div class="badges"><span>${tr(HERO.badge1)}</span><span>${tr(HERO.badge2)}</span><span>${tr(HERO.badge3)}</span></div>
     <div class="cta">
-      <a class="btn primary" href="#/destinations">Explore destinations →</a>
-      <a class="btn ghost" href="#/transportation">How to get here</a>
+      <a class="btn primary" href="#/destinations">${tr(HERO.ctaGo)}</a>
+      <a class="btn ghost" href="#/transportation">${tr(HERO.ctaHow)}</a>
     </div>
   </div>
 </section>
@@ -939,6 +985,7 @@ function route(){
 }
 window.addEventListener('hashchange', route);
 route();
+applyNavLang();
 
 /* ============================================================
    WELCOME SURVEY — visitor-type gate
