@@ -126,3 +126,12 @@ Everything marked with an amber `ADD …` tag in the prototype:
 The header greets visitors in Bisaya and the rest of the site is English. Decide **now** whether the site is bilingual throughout. If yes, build the language switcher into the header and add a language field to every content record — retrofitting this later means touching every single entry.
 
 Also confirm the spelling: the prototype uses **"Dajon Kamo!"** as supplied. The more common Cebuano spelling is **"Dayon Kamo!"**
+
+
+
+<div class="note"><b>For the content team:</b> every card above needs one landscape photo at 1200×800 or larger, plus a caption and photographer credit. The dashed boxes show exactly which shot goes where. Sites marked <em>Opening soon</em> must stay labelled that way until the facility is actually open to visitors.</div>
+
+<div class="note"><b>Needs filling in:</b> departure and arrival times, fares by class, and booking links for each operator. ${todo("ADD SCHEDULES")} ${todo("ADD FARES")} — these change often, so the developers should build this table as an editable CMS collection, not as hard-coded markup.</div>
+
+ <div class="note"><b>Three things before this page goes live.</b> First, room counts: only four establishments publish one, so the rest show “—”. The BPLO holds declared room counts on every business permit application — pull them and fill the column. Second, the contact numbers here came from a provincial tourism listing and have not been verified with the establishments themselves; call each one to confirm before publishing. Third, the “Find on Maps” links are generic Google Maps searches — they work, but they are a fallback. Ask each establishment for its actual Google Business Profile and Facebook Page URL and drop them into the <code>gbp</code> and <code>fb</code> fields; a claimed profile shows their real photos, hours and reviews, which is far better for them and for the visitor.</div>
+<div class="note"><b>A simple way to collect those links:</b> add the two URL fields to the annual business permit renewal form for accommodation establishments. The BPLO already contacts every one of them once a year, and the list stays current without anyone chasing it.</div>

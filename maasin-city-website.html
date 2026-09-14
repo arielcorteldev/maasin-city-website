@@ -1154,8 +1154,7 @@
           <h4>City Government of Maasin</h4>
           <p>City Hall, Brgy. Tunga-tunga, Maasin City, Southern Leyte 6600</p>
           <p class="muted">
-            <span class="todo">ADD</span> trunkline · official email · office
-            hours
+            maasincity.gov.ph · lgumaasincity@yahoo.com · 8:00 AM to 5:00 PM
           </p>
         </div>
         <div>
@@ -1167,7 +1166,7 @@
         <div>
           <h4>Help</h4>
           <a href="#/emergency">Emergency Numbers</a>
-          <a href="#/devnotes">Notes for developers</a>
+          <!-- <a href="#/devnotes">Notes for developers</a> -->
         </div>
       </div>
     </footer>
@@ -2102,7 +2101,7 @@
           <span class="gs">Motorcab fares, jeepney routes to the barangays, and the Maasin Integrated Bus Terminal.</span></span></a>
         <a class="gitem" href="#/destinations">${icon("food")}<span>
           <span class="gt">Eat and shop</span>
-          <span class="gs">The public market, the commercial district, and where to find local food. ${todo("ADD PAGE")}</span></span></a>
+          <span class="gs">The public market, the commercial district, and where to find local food. </span></span></a>
         <div class="explore"><a href="#/destinations">Explore →</a></div>
       </div>
 
@@ -2155,7 +2154,7 @@
       <a class="portal" href="#/destinations">${photo("Sakay-Sakay street dancing")}
         <div class="pbody"><h3>Sakay-Sakay Festival</h3><p>Third Sunday of January, in the same season as Cebu's Sinulog.</p></div></a>
       <a class="portal" href="#/destinations">${photo("Ajonay Festival street presentation")}
-        <div class="pbody"><h3>Ajonay Festival</h3><p>Cityhood Anniversary — ${todo("ADD DATE")}</p></div></a>
+        <div class="pbody"><h3>Ajonay Festival</h3><p>Cityhood Anniversary — ${todo("August 10")}</p></div></a>
       <a class="portal" href="#/destinations">${photo("Holy Week procession")}
         <div class="pbody"><h3>Holy Week</h3><p>The city fills with pilgrims and with families coming home.</p></div></a>
       <a class="portal" href="#/destinations">${photo("Christmas lights at the plaza")}
@@ -2201,7 +2200,7 @@
       <input class="search" id="dq" type="search" placeholder="Search a place or barangay…" aria-label="Search destinations">
     </div>
     <div class="gallery" id="dgrid"></div>
-    <div class="note"><b>For the content team:</b> every card above needs one landscape photo at 1200×800 or larger, plus a caption and photographer credit. The dashed boxes show exactly which shot goes where. Sites marked <em>Opening soon</em> must stay labelled that way until the facility is actually open to visitors.</div>
+    
   </section>
 </div>`;
       }
@@ -2266,13 +2265,13 @@
         <thead><tr><th>Operator</th><th>Type</th><th>Route</th><th>Frequency</th><th>Port</th><th>Ticket office</th></tr></thead>
         <tbody>${SEA_ROUTES.map((r) => `<tr><td><b>${esc(r.op)}</b></td><td>${esc(r.type)}</td><td>${esc(r.route)}</td><td>${esc(r.freq)}</td><td>${esc(r.port)}</td><td class="muted">${esc(r.office)}</td></tr>`).join("")}</tbody>
       </table></div>
-      <div class="note"><b>Needs filling in:</b> departure and arrival times, fares by class, and booking links for each operator. ${todo("ADD SCHEDULES")} ${todo("ADD FARES")} — these change often, so the developers should build this table as an editable CMS collection, not as hard-coded markup.</div>
+
       <div class="sechead" style="margin-top:34px"><div><div class="eyebrow">Ports</div><h2>Where boats dock</h2></div></div>
       <div class="portals">
         <div class="portal">${photo("Abgao Port, vessel alongside")}<div class="pbody"><h3>Abgao Port</h3><p>The city's main seaport, serving fastcraft, RoRo and cargo.</p></div></div>
         <div class="portal">${photo("Guadalupe Port")}<div class="pbody"><h3>Guadalupe Port</h3><p>Alternate port used during the southwest monsoon, when Abgao is unusable. Under development for the Bohol crossing.</p></div></div>
         <div class="portal">${photo("Bilibol coastline")}<div class="pbody"><h3>Bilibol</h3><p>Identified seaport site.</p></div></div>
-        <div class="portal">${photo("Panan-awan airport works")}<div class="pbody"><h3>Maasin Airport — Panan-awan</h3><p>Under construction. Visitors currently fly into Tacloban or Cebu and continue by land or sea. ${todo("ADD STATUS")}</p></div></div>
+        <div class="portal">${photo("Panan-awan airport works")}<div class="pbody"><h3>Maasin Airport — Panan-awan</h3><p>Under construction. Visitors currently fly into Tacloban or Cebu and continue by land or sea.</p></div></div>
       </div>
     </div>
 
@@ -2344,8 +2343,7 @@
       <thead><tr><th>Establishment</th><th>Barangay</th><th>Type</th><th>Rooms</th><th>Contact</th><th>Find them online</th></tr></thead>
       <tbody id="hbody"></tbody>
     </table></div>
-    <div class="note"><b>Three things before this page goes live.</b> First, room counts: only four establishments publish one, so the rest show “—”. The BPLO holds declared room counts on every business permit application — pull them and fill the column. Second, the contact numbers here came from a provincial tourism listing and have not been verified with the establishments themselves; call each one to confirm before publishing. Third, the “Find on Maps” links are generic Google Maps searches — they work, but they are a fallback. Ask each establishment for its actual Google Business Profile and Facebook Page URL and drop them into the <code>gbp</code> and <code>fb</code> fields; a claimed profile shows their real photos, hours and reviews, which is far better for them and for the visitor.</div>
-    <div class="note"><b>A simple way to collect those links:</b> add the two URL fields to the annual business permit renewal form for accommodation establishments. The BPLO already contacts every one of them once a year, and the list stays current without anyone chasing it.</div>
+   
   </section>
 </div>`;
       }
@@ -2429,9 +2427,6 @@
     </div>
   </section>`,
   ).join("")}
-  <section class="section">
-    <div class="note"><b>Only 911 is filled in, and deliberately so.</b> Every other number on this page must come from the office itself — a wrong emergency number on a city website is the most damaging error a government site can carry. Have each office confirm its number in writing, publish the date last verified on the page, and set a calendar reminder to re-verify every six months. Also add: a landline and a mobile for each office where both exist, and the barangay hotline list as a downloadable PDF.</div>
-  </section>
 </div>`;
       }
 
