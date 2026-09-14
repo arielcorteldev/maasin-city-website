@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maasin City — Official Website | City of Faith, Southern Leyte</title>
+<meta name="description" content="Official website of the City Government of Maasin, Southern Leyte. Tourist destinations, transportation routes, accommodation and emergency contact numbers.">
+<meta name="theme-color" content="#07414F">
+
+<!-- Social sharing (replace the image URL once a hero photo exists) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="City Government of Maasin">
+<meta property="og:title" content="Welcome to Maasin City! Dajon Kamo!">
+<meta property="og:description" content="The City of Faith and capital of Southern Leyte — a Tourism Zone under Republic Act No. 12236.">
+<meta property="og:url" content="https://maasincity.gov.ph/">
+<meta property="og:image" content="https://maasincity.gov.ph/images/og-maasin.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- TODO: replace with the official city seal favicon -->
+<link rel="icon" href="/favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+
+<style>
+/* minimal reset */
+:root{color-scheme:light}
+html{-webkit-text-size-adjust:100%}
+img,video{max-width:100%;height:auto}
+[hidden]{display:none!important}
+</style>
+<style>
+:root{
+  --bg:#F6F6F3; --surface:#FFFFFF; --surface-2:#EDEFEA;
+  --ink:#0E2027; --ink-2:#3D5158; --ink-3:#6B7F86;
+  --rule:#D8DEDA; --rule-soft:#E7EBE7;
+  --sea:#07414F; --sea-2:#0E7A8C; --sea-wash:#DFEDEF;
+  --sun:#E07B39; --sun-wash:#FBEADE;
+  --gold:#B98A25;
+  --alert:#B3261E; --alert-wash:#FBE5E3;
+  --ok:#2E6B4F;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(14,32,39,.05), 0 12px 28px -20px rgba(14,32,39,.45);
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); margin:0;
+  font-family:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px; line-height:1.55}
+h1,h2,h3,h4{margin:0; font-family:Gabarito,"Trebuchet MS",sans-serif; text-wrap:balance; font-weight:700}
+a{color:inherit}
+.shell{max-width:1120px; margin:0 auto; padding-inline:18px}
+.tag{display:inline-block; font-size:11px; font-weight:700; letter-spacing:.06em;
+  text-transform:uppercase; padding:3px 9px; border-radius:999px}
+
+/* ---------- emergency ribbon ---------- */
+.ribbon{background:var(--alert); color:#fff}
+.ribbon .shell{display:flex; gap:12px; align-items:center; justify-content:center;
+  padding-block:7px; font-size:13.5px; font-weight:600; flex-wrap:wrap; text-align:center}
+.ribbon a{text-decoration:underline; text-underline-offset:2px}
+
+/* ---------- header ---------- */
+header.site{position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--rule)}
+.bar{display:flex; align-items:center; gap:14px; padding-block:11px}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; flex:none}
+.seal{width:42px; height:42px; border-radius:50%; background:var(--sea); color:#fff;
+  display:flex; align-items:center; justify-content:center; flex:none; line-height:1; object-fit: cover;
+  }
+.brand .bt{line-height:1.15}
+.brand .bt b{display:block; font-family:Gabarito,sans-serif; font-size:16px; font-weight:700}
+.brand .bt span{display:block; font-size:11px; color:var(--ink-3); letter-spacing:.02em}
+nav.main{margin-left:auto; display:flex; gap:2px; flex-wrap:wrap}
+nav.main a{padding:8px 13px; border-radius:9px; text-decoration:none; font-size:14.5px;
+  font-weight:600; color:var(--ink-2)}
+nav.main a:hover{background:var(--surface-2); color:var(--ink)}
+nav.main a.on{background:var(--sea); color:#fff}
+nav.main a.em{color:var(--alert)}
+nav.main a.em.on{background:var(--alert); color:#fff}
+:focus-visible{outline:3px solid var(--sun); outline-offset:2px; border-radius:6px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--sea); color:#fff; position:relative; overflow:hidden}
+.hero .photo{position:absolute; inset:0; background:
+  linear-gradient(180deg, rgba(7,65,79,.55) 0%, rgba(7,65,79,.85) 100%),
+  url('images/hero-maasin.jpg') center/cover no-repeat}
+.hero .shell{position:relative; padding-block:60px 52px}
+.hero .kicker{font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+  font-weight:700; color:#9FD9E4; margin-bottom:12px}
+.hero h1{font-size:clamp(34px,6.4vw,60px); line-height:1.02; letter-spacing:-.02em; color:#fff}
+.hero h1 em{font-style:normal; color:#F6C88A; display:block}
+.hero p.lead{margin:16px 0 0; max-width:56ch; font-size:17px; color:#D3E8ED}
+.hero .badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:20px}
+.hero .badges span{background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.22);
+  color:#fff; font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:999px}
+.hero .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:26px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:11px;
+  font-weight:700; font-size:15px; text-decoration:none; border:2px solid transparent; cursor:pointer;
+  font-family:inherit}
+.btn.primary{background:var(--sun); color:#20120A}
+.btn.ghost{background:transparent; color:#fff; border-color:rgba(255,255,255,.4)}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* ---------- sections ---------- */
+main{padding-block:0 70px}
+.section{padding-block:46px 0}
+.sechead{display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+  flex-wrap:wrap; margin-bottom:20px}
+.sechead h2{font-size:28px; letter-spacing:-.01em}
+.sechead p{margin:5px 0 0; color:var(--ink-2); font-size:15px; max-width:60ch}
+.eyebrow{font-size:11.5px; letter-spacing:.15em; text-transform:uppercase; font-weight:700;
+  color:var(--sea-2); margin-bottom:6px}
+
+/* ---------- portal cards ---------- */
+.portals{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.portal{background:var(--surface); border:1px solid var(--rule); border-radius:var(--radius);
+  overflow:hidden; text-decoration:none; display:flex; flex-direction:column;
+  box-shadow:var(--shadow); transition:transform .15s ease, border-color .15s ease}
+.portal:hover{transform:translateY(-3px); border-color:var(--sea-2)}
+.portal .ph{aspect-ratio:4/3; position:relative}
+.portal .pbody{padding:15px 17px 18px}
+.portal h3{font-size:19px; margin-bottom:5px}
+.portal p{margin:0; font-size:13.5px; color:var(--ink-2); line-height:1.5}
+.portal .more{margin-top:11px; font-size:13.5px; font-weight:700; color:var(--sea-2)}
+.portal.alertcard{border-color:var(--alert)}
+.portal.alertcard .more{color:var(--alert)}
+
+/* ---------- photo placeholder ---------- */
+.ph{background:
+  linear-gradient(135deg, var(--sea-wash) 0%, var(--surface-2) 100%);
+  display:flex; align-items:center; justify-content:center; padding:14px; text-align:center;
+  border-bottom:1px solid var(--rule-soft)}
+.ph span{font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--ink-3); line-height:1.5; max-width:30ch}
+.ph::before{content:""; position:absolute; inset:9px; border:1.5px dashed var(--rule);
+  border-radius:8px; pointer-events:none}
+
+/* ---------- facts ---------- */
+.facts{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--rule);
+  border:1px solid var(--rule); border-radius:var(--radius); overflow:hidden}
+.fact{background:var(--surface); padding:16px 18px}
+.fact b{display:block; font-family:Gabarito,sans-serif; font-size:27px; line-height:1.1;
+  color:var(--sea-2); font-variant-numeric:tabular-nums}
+.fact span{display:block; font-size:12.5px; color:var(--ink-3); margin-top:3px; line-height:1.35}
+
+/* ---------- filters ---------- */
+.filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; align-items:center}
+.chip{background:var(--surface); border:1px solid var(--rule); color:var(--ink-2);
+  padding:7px 14px; border-radius:999px; font-size:13.5px; font-weight:600; cursor:pointer;
+  font-family:inherit}
+.chip:hover{border-color:var(--sea-2); color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--sea); border-color:var(--sea); color:#fff}
+.search{flex:1 1 220px; min-width:0; padding:9px 13px; border:1px solid var(--rule);
+  border-radius:10px; background:var(--surface); color:var(--ink); font:inherit; font-size:14px}
+
+/* ---------- gallery ---------- */
+.gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.card{background:var(--surface); border:1px solid var(--rule); border-radius:var(--radius);
+  overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column}
+.card .ph{aspect-ratio:3/2; position:relative}
+.card .cb{padding:14px 16px 16px; display:flex; flex-direction:column; gap:6px; flex:1}
+.card h3{font-size:17.5px; line-height:1.25}
+.card .loc{font-size:12.5px; color:var(--ink-3); font-weight:600}
+.card p{margin:0; font-size:13.5px; color:var(--ink-2); line-height:1.5}
+.badge-p{background:var(--sun-wash); color:var(--sun)}
+.badge-e{background:var(--sea-wash); color:var(--sea-2)}
+.badge-s{background:var(--surface-2); color:var(--ink-3)}
+.cardtags{display:flex; gap:6px; flex-wrap:wrap; margin-top:auto; padding-top:8px}
+
+/* ---------- tables ---------- */
+.tablewrap{border:1px solid var(--rule); border-radius:var(--radius); overflow-x:auto;
+  background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:600px; font-size:14px}
+th{text-align:left; background:var(--surface-2); color:var(--ink-2); font-size:11px;
+  letter-spacing:.09em; text-transform:uppercase; font-weight:700; padding:11px 14px;
+  border-bottom:1px solid var(--rule); white-space:nowrap}
+td{padding:11px 14px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+tr:last-child td{border-bottom:0}
+td b{font-weight:700}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+.muted{color:var(--ink-3)}
+
+/* ---------- tabs ---------- */
+.tabs{display:flex; gap:4px; border-bottom:2px solid var(--rule); margin-bottom:22px; flex-wrap:wrap}
+.tabs button{background:none; border:0; border-bottom:3px solid transparent; margin-bottom:-2px;
+  padding:11px 16px; font:inherit; font-size:15px; font-weight:700; color:var(--ink-3); cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--sea-2); border-bottom-color:var(--sea-2)}
+
+/* ---------- emergency ---------- */
+.emgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.emcard{background:var(--surface); border:1px solid var(--rule); border-left:5px solid var(--alert);
+  border-radius:12px; padding:15px 17px; display:flex; flex-direction:column; gap:4px}
+.emcard h3{font-size:16.5px}
+.emcard .who{font-size:12.5px; color:var(--ink-3)}
+.emcard .num{font-family:Gabarito,sans-serif; font-size:23px; font-weight:700; color:var(--alert);
+  text-decoration:none; letter-spacing:-.01em; margin-top:4px; display:inline-block}
+.emcard.prime{border-left-color:var(--sea)}
+.emcard.prime .num{color:var(--sea-2)}
+
+/* ---------- misc ---------- */
+.note{background:var(--sun-wash); border-left:4px solid var(--sun); padding:13px 16px;
+  border-radius:0 10px 10px 0; font-size:14px; color:var(--ink); line-height:1.55; margin-top:18px}
+.note b{color:var(--sun)}
+.todo{display:inline-block; background:var(--sun-wash); color:var(--sun); border:1px dashed var(--sun);
+  font-size:11.5px; font-weight:700; padding:1px 7px; border-radius:5px; white-space:nowrap}
+.backlink{display:inline-block; margin-bottom:14px; font-size:14px; font-weight:700;
+  color:var(--sea-2); text-decoration:none}
+.pagehead{padding-block:34px 0}
+.pagehead h1{font-size:clamp(28px,4.6vw,40px); letter-spacing:-.015em}
+.pagehead p{margin:9px 0 0; color:var(--ink-2); font-size:16px; max-width:62ch}
+footer.site{border-top:1px solid var(--rule); background:var(--surface); margin-top:56px}
+footer.site .shell{padding-block:26px 30px; display:grid; grid-template-columns:2fr 1fr 1fr; gap:24px}
+footer.site h4{font-size:13px; text-transform:uppercase; letter-spacing:.09em; color:var(--ink-3); margin-bottom:8px}
+footer.site a, footer.site p{font-size:13.5px; color:var(--ink-2); text-decoration:none; display:block; margin-bottom:5px}
+footer.site a:hover{color:var(--sea-2)}
+.hidden{display:none !important}
+
+/* ---------- guide columns (trip-stage grid) ---------- */
+.guide{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+.gcol{background:var(--surface); border:1px solid var(--rule); border-radius:var(--radius);
+  padding:24px 24px 22px; display:flex; flex-direction:column; box-shadow:var(--shadow)}
+.gcol > .gh{display:flex; align-items:center; gap:11px; padding-bottom:15px;
+  border-bottom:2px solid var(--sea); margin-bottom:6px}
+.gcol .gnum{font-family:Gabarito,sans-serif; font-size:13px; font-weight:800; color:var(--sea-2);
+  background:var(--sea-wash); width:28px; height:28px; border-radius:50%; flex:none;
+  display:flex; align-items:center; justify-content:center}
+.gcol h3{font-size:21px; letter-spacing:-.01em}
+.gcol.urgent > .gh{border-bottom-color:var(--alert)}
+.gcol.urgent .gnum{color:var(--alert); background:var(--alert-wash)}
+.gitem{display:flex; gap:13px; align-items:flex-start; padding:15px 0;
+  border-bottom:1px solid var(--rule-soft); text-decoration:none}
+.gitem:last-of-type{border-bottom:0}
+.gitem .ico{width:38px; height:38px; border-radius:10px; background:var(--surface-2);
+  display:flex; align-items:center; justify-content:center; flex:none; color:var(--sea-2)}
+.gcol.urgent .gitem .ico{color:var(--alert)}
+.gitem:hover .ico{background:var(--sea-wash)}
+.gitem .gt{font-size:15.5px; font-weight:700; line-height:1.3}
+.gitem .gs{font-size:13px; color:var(--ink-2); line-height:1.45; margin-top:2px}
+.gcol .explore{margin-top:auto; padding-top:18px}
+.gcol .explore a{display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:700;
+  color:var(--sea-2); text-decoration:none; border:2px solid var(--sea-2); padding:9px 17px;
+  border-radius:10px}
+.gcol .explore a:hover{background:var(--sea); border-color:var(--sea); color:#fff}
+.gcol.urgent .explore a{color:var(--alert); border-color:var(--alert)}
+.gcol.urgent .explore a:hover{background:var(--alert); color:#fff}
+
+/* ---------- breadcrumb ---------- */
+.crumb{font-size:13px; color:var(--ink-3); margin-bottom:12px}
+.crumb a{color:var(--sea-2); text-decoration:none; font-weight:600}
+.crumb span{margin:0 7px; opacity:.6}
+
+/* ---------- hotel links ---------- */
+.hlinks{display:flex; gap:6px; flex-wrap:wrap}
+.hlink{display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700;
+  padding:5px 10px; border-radius:8px; text-decoration:none; border:1px solid var(--rule);
+  background:var(--surface-2); color:var(--ink-2); white-space:nowrap}
+.hlink:hover{border-color:var(--sea-2); color:var(--sea-2)}
+.hlink.g{background:var(--sea-wash); border-color:transparent; color:var(--sea-2)}
+.hlink.f{background:var(--sun-wash); border-color:transparent; color:var(--sun)}
+
+/* ---------- welcome survey ---------- */
+body.locked{overflow:hidden}
+.scrim{position:fixed; inset:0; z-index:200; background:rgba(7,32,39,.72);
+  backdrop-filter:blur(3px); display:flex; align-items:center; justify-content:center; padding:18px}
+.modal{background:var(--surface); border-radius:18px; max-width:560px; width:100%;
+  box-shadow:0 30px 70px -20px rgba(0,0,0,.6); overflow:hidden; max-height:92vh; overflow-y:auto}
+.modal .mhead{background:var(--sea); color:#fff; padding:24px 26px 20px}
+.modal .mhead .k{font-size:11.5px; letter-spacing:.15em; text-transform:uppercase;
+  font-weight:700; color:#9FD9E4; margin-bottom:7px}
+.modal .mhead h2{font-size:26px; line-height:1.12; color:#fff}
+.modal .mhead p{margin:9px 0 0; font-size:14.5px; color:#CFE6EB; line-height:1.5}
+.modal .mbody{padding:20px 26px 24px}
+.modal fieldset{border:0; margin:0; padding:0}
+.modal legend{font-size:14.5px; font-weight:700; margin-bottom:12px; color:var(--ink)}
+.opts{display:grid; gap:9px}
+.opt{display:flex; align-items:center; gap:12px; padding:13px 15px; border:2px solid var(--rule);
+  border-radius:12px; cursor:pointer; background:var(--surface); transition:border-color .12s ease}
+.opt:hover{border-color:var(--sea-2)}
+.opt input{accent-color:var(--sea-2); width:19px; height:19px; flex:none; margin:0}
+.opt .ot{font-size:15.5px; font-weight:600; line-height:1.3}
+.opt .os{display:block; font-size:12.5px; color:var(--ink-3); font-weight:400; margin-top:1px}
+.opt:has(input:checked){border-color:var(--sea); background:var(--sea-wash)}
+.modal .mfoot{margin-top:18px; display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+.modal .btn:disabled{opacity:.4; cursor:not-allowed}
+.privacy{margin-top:14px; font-size:12px; color:var(--ink-3); line-height:1.5}
+.privacy a{color:var(--sea-2)}
+
+@media (max-width:980px){
+  .portals{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .emgrid{grid-template-columns:repeat(2,1fr)}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  footer.site .shell{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .bar{flex-wrap:wrap}
+  nav.main{margin-left:0; width:100%; overflow-x:auto; flex-wrap:nowrap; padding-bottom:2px}
+  nav.main a{white-space:nowrap}
+  .portals,.gallery,.emgrid,.facts{grid-template-columns:1fr}
+  footer.site .shell{grid-template-columns:1fr}
+  .hero .shell{padding-block:40px 36px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">
+  <div class="shell">
+    <span>🚨 Emergency? National hotline <a href="tel:911">911</a> &nbsp;·&nbsp; City DRRMO <a href="#/emergency">see all Maasin hotlines</a></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="shell bar">
+    <a class="brand" href="#/">
+      <img class="seal" src="assets/logos/city-logo.png" alt="Official Seal of Maasin City">
+      <span class="bt"><b>Maasin City</b><span>Southern Leyte · Philippines</span></span>
+    </a>
+    <nav class="main" id="nav">
+      <a href="#/" data-r="/">Home</a>
+      <a href="#/destinations" data-r="/destinations">Tourist Destinations</a>
+      <a href="#/transportation" data-r="/transportation">Transportation</a>
+      <a href="#/accommodation" data-r="/accommodation">Accommodation</a>
+      <a href="#/emergency" data-r="/emergency" class="em">Emergency</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer class="site">
+  <div class="shell">
+    <div>
+      <h4>City Government of Maasin</h4>
+      <p>City Hall, Brgy. Tunga-tunga, Maasin City, Southern Leyte 6600</p>
+      <p class="muted"><span class="todo">ADD</span> trunkline · official email · office hours</p>
+    </div>
+    <div>
+      <h4>Visitors</h4>
+      <a href="#/destinations">Tourist Destinations</a>
+      <a href="#/transportation">How to Get Here</a>
+      <a href="#/accommodation">Where to Stay</a>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <a href="#/emergency">Emergency Numbers</a>
+      <a href="#/devnotes">Notes for developers</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   MAASIN CITY — SITE PROTOTYPE
+   Data is separated from rendering so it can be swapped for a
+   CMS collection or API response without touching the markup.
+   ============================================================ */
+
+
+const DESTINATIONS = [
+  // --- Pilgrimage (CDP Table 56) ---
+  {name:"17th Century Maasin Cathedral", brgy:"Brgy. Tunga-tunga", cat:"pilgrimage", status:"open",
+   desc:"The city's anchor heritage church and the historic seat of faith in Southern Leyte. The natural first stop of any pilgrimage.",
+   photo:"Cathedral façade, golden hour"},
+  {name:"Monte Cueva Shrine", brgy:"Brgy. Rizal", cat:"pilgrimage", status:"open",
+   desc:"A shrine set inside a cave — the most distinctive of the city's four pilgrimage sites.",
+   photo:"Cave shrine entrance and interior"},
+  {name:"Jalleca Hill Shrine", brgy:"Brgy. Abgao", cat:"pilgrimage", status:"open",
+   desc:"An elevated shrine within the urban core, a short walk from the cathedral, with a view over the bay.",
+   photo:"The climb and the view from the hill"},
+  {name:"San Francisco Xavier Shrine", brgy:"Brgy. Hanginan", cat:"pilgrimage", status:"open",
+   desc:"The upland shrine, reached by a climb, with the coastal city spread out below.",
+   photo:"Ascent, summit and panorama"},
+
+  // --- Eco-adventure / emerging (CDP Table 54) ---
+  {name:"Camp Danao Eco-Adventure Forest Park", brgy:"Danao, Brgy. Malapoc Norte", cat:"adventure", status:"open",
+   desc:"Land, water and aero sports for all ages — camping, biking, hiking, sky biking, bungee bounce, net trampoline, zipline, swimming pool and a mountain view deck.",
+   photo:"Zipline, view deck and trails"},
+  {name:"Guinsohotan Cave, Falls & Lagoon", brgy:"Brgy. Cagnituan", cat:"adventure", status:"open",
+   desc:"A large subterranean cave 15 km from the city centre at 276 m above sea level — in-cave waterfalls, bats and rock formations, cascading out into a natural lagoon. Reached from Brgy. Maria Clara by habal-habal, then on foot.",
+   photo:"Cave interior, waterfall and lagoon"},
+  {name:"Mahayahay Mangrove Eco-Park", brgy:"Brgy. Mahayahay", cat:"adventure", status:"open",
+   desc:"A partnership between the City Government and the people of Brgy. Mahayahay for the protection and development of sustainable mangrove forest.",
+   photo:"Mangrove boardwalk"},
+  {name:"Hapitan Beach Resort", brgy:"Brgy. Manhilo", cat:"beach", status:"open",
+   desc:"Spring resort on 2,500 sqm with two pools fed by cool natural springs.",
+   photo:"Spring-fed pools"},
+  {name:"Dongon Hillside Resort", brgy:"Brgy. Dongon", cat:"beach", status:"open",
+   desc:"Minutes from the city proper. A clean hillside setting for family weekends, with food and drink served on site.",
+   photo:"Hillside pool and pavilions"},
+  {name:"Lonoy Cave", brgy:"Brgy. Lonoy", cat:"adventure", status:"open",
+   desc:"TO BE COMPLETED — supply the site's proper name, access route and a short description.",
+   photo:"Cave interior", todo:true},
+
+  // --- Beaches & resorts (CDP Table 48) ---
+  {name:"Caimito Beach", brgy:"Brgy. Pasay", cat:"beach", status:"open",
+   desc:"Beachfront property on the city's southern shoreline, with hotel accommodation on site.",
+   photo:"Beachfront and shoreline"},
+  {name:"Likay-likay Beach", brgy:"Brgy. Tunga-tunga", cat:"beach", status:"open",
+   desc:"A city-side beach within easy reach of the poblacion.", photo:"Shoreline at Likay-likay"},
+  {name:"Mercado Beach", brgy:"Brgy. Ibarra", cat:"beach", status:"open",
+   desc:"Coastal swimming and day-use area north of the city centre.", photo:"Beach and picnic areas"},
+  {name:"Talisay Beach", brgy:"Brgy. Isagani", cat:"beach", status:"open",
+   desc:"Quiet stretch of shoreline on the Isagani coast.", photo:"Beach at Talisay"},
+  {name:"Cacao Mountain Resort", brgy:"Brgy. Combado", cat:"beach", status:"open",
+   desc:"Mountain resort above the city with pool facilities and accommodation.", photo:"Mountain resort grounds"},
+  {name:"Libhu Mountain Resort & Sports Complex", brgy:"Brgy. Libhu", cat:"beach", status:"open",
+   desc:"Upland resort with pool and sports facilities.", photo:"Resort pool and sports complex"},
+
+  // --- Parks (CDP Table 74) ---
+  {name:"Maasin City Plaza", brgy:"Brgy. Tunga-tunga", cat:"park", status:"open",
+   desc:"The city centre's principal gathering place beside the cathedral — where civic life happens.",
+   photo:"Plaza by day and lit at night"},
+  {name:"Maasin Bayview Park", brgy:"Brgy. Combado", cat:"park", status:"open",
+   desc:"Coastal views and sea breeze; the city's evening promenade.", photo:"Bayview at sunset"},
+  {name:"Danao Forest Park", brgy:"Danao, Brgy. Malapoc Norte", cat:"park", status:"open",
+   desc:"Eco-tourism, outdoor recreation and the venue for organised community events.", photo:"Forest park grounds"},
+  {name:"Espina Boulevard", brgy:"Brgy. Tunga-tunga", cat:"park", status:"open",
+   desc:"The seaside boulevard — walking, jogging and the city's evening crowd.", photo:"Boulevard at golden hour"},
+
+  // --- Opening next (CDP Table 55) ---
+  {name:"Pugaling Peak", brgy:"Brgy. Isagani", cat:"adventure", status:"soon",
+   desc:"Climbing and getaway site with a majestic view over Maasin's coastal seas.", photo:"Summit view over the coast"},
+  {name:"Sto. Rosario Beach", brgy:"Brgy. Libhu", cat:"adventure", status:"soon",
+   desc:"A labyrinth of rock formations and an underground river — stalactites and cave coral, for adventurers and spelunkers.",
+   photo:"Cave formations and underground river"},
+  {name:"Libhu Busay", brgy:"Brgy. Libhu", cat:"adventure", status:"soon",
+   desc:"One of the city's natural springs, cold and clean, to be developed as a swimming area.", photo:"Falls and spring pool"},
+  {name:"Lawis Beach", brgy:"Brgy. Bilibol", cat:"beach", status:"soon",
+   desc:"A long shoreline for water activities and sand sports.", photo:"Wide shoreline"},
+  {name:"Mt. Kayanuhan Peak", brgy:"Brgy. Lunas", cat:"adventure", status:"soon",
+   desc:"A landscape of small hills the city likens to the Chocolate Hills of Bohol.", photo:"Rolling hills from the peak"},
+  {name:"Dragon Fruit Farm", brgy:"Brgy. Hanginan", cat:"farm", status:"soon",
+   desc:"Agri-tourism — visitors watch dragon fruit grown, harvested and processed, with produce and gifts to take home.",
+   photo:"Dragon fruit harvest and produce"},
+  {name:"Athena's Secret Garden", brgy:"Brgy. Nonok Norte", cat:"beach", status:"soon",
+   desc:"A nature resort with its own natural spring feeding the pool area.", photo:"Garden and spring-fed pool"}
+];
+
+const SEA_ROUTES = [
+  {op:"OceanJet", type:"Fastcraft", route:"Surigao – Maasin – Cebu (and back)", freq:"Daily", port:"Abgao Port", office:"Brgy. Tunga-tunga"},
+  {op:"Cokaliong Shipping Lines", type:"RoRo", route:"Maasin – Cebu City", freq:"Once a week", port:"Abgao Port", office:"Brgy. Abgao"},
+  {op:"FastCat", type:"RoRo", route:"Surigao – Maasin (and back)", freq:"Check schedule", port:"Abgao Port", office:"Brgy. Tunga-tunga"},
+  {op:"RLS Shipping — MV Cesar Jose", type:"RoRo", route:"Maasin City – Limasawa Island", freq:"Check schedule", port:"Abgao Port", office:"Brgy. Abgao"},
+  {op:"RLS Shipping", type:"Cargo", route:"Cargo services", freq:"Regular", port:"Abgao Port", office:"Brgy. Abgao"},
+  {op:"Santa Clara Shipping Corp.", type:"Cargo", route:"Cargo services", freq:"Regular", port:"Abgao Port", office:"—"},
+  {op:"Roble Shipping / AAA", type:"Ticketing", route:"Ticketing outlet", freq:"—", port:"—", office:"Brgy. Tunga-tunga"},
+  {op:"Paler Travel & Tours", type:"Ticketing", route:"Sea and air bookings", freq:"—", port:"—", office:"Brgy. Tagnipa"},
+  {op:"Quest Travel & Tours", type:"Ticketing", route:"Sea and air bookings", freq:"—", port:"—", office:"Brgy. Tagnipa"}
+];
+
+const LAND_ROUTES = [
+  {dest:"Ormoc City", mode:"Bus / Van", time:"≈ 2 hours", note:"Connections onward to Cebu by fastcraft"},
+  {dest:"Tacloban City", mode:"Bus / Van", time:"≈ 3 hours", note:"Nearest commercial airport (DZR)"},
+  {dest:"Sogod", mode:"Bus / Van / Jeepney", time:"TBC", note:"Eastern Southern Leyte connections"},
+  {dest:"Padre Burgos", mode:"Van / Jeepney", time:"TBC", note:"Dive sites"},
+  {dest:"Macrohon", mode:"Jeepney / Van", time:"TBC", note:"Adjacent municipality"},
+  {dest:"Liloan / Pintuyan", mode:"Bus / Van", time:"TBC", note:"Onward ferry to Surigao / Mindanao"},
+  {dest:"Bato, Leyte", mode:"Bus / Van", time:"TBC", note:"Northbound route"}
+];
+
+/* Each establishment can carry two owned links:
+     gbp = Google Business Profile URL   fb = Facebook Page URL
+   Where the city has not yet collected the real URL, the renderer falls back to a
+   Google Maps SEARCH link, which always resolves. Replace with the establishment's
+   own profile URL as each one confirms it. */
+const HOTELS = [
+  {n:"Vismin GV Hotel", b:"Brgy. Abgao", t:"Hotel", rooms:53, tel:"0917 632 1374", gbp:"", fb:""},
+  {n:"Jaimees Hotel & Resort", b:"Brgy. Ibarra", t:"Hotel / Resort", rooms:17, tel:"", gbp:"", fb:""},
+  {n:"Villa Romana Hotel", b:"Brgy. Abgao", t:"Hotel", rooms:null, tel:"(053) 381-0639 · 0917 323 7610", gbp:"", fb:""},
+  {n:"Caimito Beach Hotel", b:"Brgy. Pasay", t:"Beach hotel", rooms:9, tel:"(053) 570-1139", gbp:"", fb:""},
+  {n:"DW Pension", b:"Brgy. Abgao", t:"Pension", rooms:10, tel:""},
+  {n:"A Square Pension", b:"Brgy. Tunga-tunga", t:"Pension", rooms:null, tel:"(053) 570-8962 · 0916 949 7400"},
+  {n:"Ampil Pension House", b:"Brgy. Abgao", t:"Pension", rooms:null, tel:"0906 900 1575"},
+  {n:"B&B Pension (Angela's Bed & Breakfast)", b:"Brgy. Abgao", t:"Pension", rooms:null, tel:"(053) 381-0401"},
+  {n:"Floi-Quin Pension & Café", b:"Brgy. Tagnipa", t:"Pension", rooms:null, tel:"(053) 570-8896"},
+  {n:"Southern Comfort Pension 1", b:"Brgy. Abgao", t:"Pension", rooms:null, tel:"(053) 570-8514"},
+  {n:"Southern Comfort Pension 2", b:"Brgy. Tagnipa", t:"Pension", rooms:null, tel:"0963 266 1906"},
+  {n:"Maasin Country Lodge", b:"Brgy. Mambajao", t:"Lodge", rooms:null, tel:"(053) 381-2102"},
+  {n:"Nesfa Lodge — Ibarra", b:"Brgy. Ibarra", t:"Lodge", rooms:null, tel:""},
+  {n:"Nesfa Lodge — Tunga-tunga", b:"Brgy. Tunga-tunga", t:"Lodge", rooms:null, tel:""},
+  {n:"Evelyn Apartel", b:"Brgy. Abgao", t:"Apartelle", rooms:null, tel:""},
+  {n:"WENG's Pension House", b:"Brgy. Tagnipa", t:"Pension", rooms:null, tel:""},
+  {n:"Cacao Mountain Resort", b:"Brgy. Combado", t:"Resort", rooms:null, tel:""},
+  {n:"Libhu Mountain Resort & Sports Complex", b:"Brgy. Libhu", t:"Resort", rooms:null, tel:""},
+  {n:"Sunday's Villa", b:"Brgy. Mahayahay", t:"Resort", rooms:null, tel:""},
+  {n:"Sophia Lawis Beach", b:"Brgy. Bilibol", t:"Beach resort", rooms:null, tel:""},
+  {n:"Hapitan Beach Resort", b:"Brgy. Manhilo", t:"Day resort", rooms:null, tel:""},
+  {n:"Dongon Hillside Resort", b:"Brgy. Dongon", t:"Day resort", rooms:null, tel:""}
+];
+
+const EMERGENCY = [
+  {g:"Call first", items:[
+    {n:"National Emergency Hotline", w:"Police · Fire · Medical · Rescue", t:"911", prime:true},
+    {n:"Maasin City DRRMO", w:"Disaster risk reduction & rescue", t:"09704522222", prime:true},
+    {n:"Maasin City Police Station", w:"Philippine National Police", t:"09950611081", prime:true}
+  ]},
+  {g:"Fire & rescue", items:[
+    {n:"Bureau of Fire Protection — Maasin", w:"City Fire Station", t:"09075989255"},
+    {n:"Philippine Coast Guard — Maasin", w:"Sea rescue and port emergencies", t:"09155858807"},
+    {n:"Philippine Red Cross — Southern Leyte", w:"Ambulance and blood services", t:"09750149544"}
+  ]},
+  {g:"Medical", items:[
+    {n:"Salvacion Oppus Yñiguez Memorial Provincial Hospital", w:"Government hospital", t:"09924598559"},
+    {n:"Maasin MedCity", w:"Private hospital", t:""},
+    {n:"Living Hope Hospital", w:"Private hospital", t:""},
+    {n:"City Health Office", w:"City Health Units I, II and III", t:""}
+  ]},
+  {g:"Utilities & services", items:[
+    {n:"SOLECO", w:"Southern Leyte Electric Cooperative — power outages", t:""},
+    {n:"Maasin Water District", w:"Water supply", t:""},
+    {n:"City Social Welfare & Development Office", w:"Assistance and evacuation support", t:""},
+    {n:"City Investment Promotions & Tourism Office", w:"Visitor assistance", t:""}
+  ]}
+];
+
+/* ------------------------------------------------------------------ */
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+/* Simple line icons — stroke inherits currentColor so they work in both themes */
+const SVG = {
+  ship:  '<path d="M3 18c1.5 0 2-1 3.5-1s2 1 3.5 1 2-1 3.5-1 2 1 3.5 1M5 15V9l7-3 7 3v6M12 6V3"/>',
+  bed:   '<path d="M3 18v-7h18v7M3 18v2M21 18v2M3 13V7M7 11V9a1 1 0 011-1h3a1 1 0 011 1v2"/>',
+  cal:   '<path d="M4 6h16v14H4zM4 10h16M9 3v4M15 3v4"/>',
+  pin:   '<path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+  wheel: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v5M12 15v5M4 12h5M15 12h5"/>',
+  food:  '<path d="M6 3v8a2 2 0 004 0V3M8 11v10M17 3c-1.5 1.5-2 3-2 5s.5 3 2 3v10"/>',
+  phone: '<path d="M6 3h4l2 5-2.5 1.5a12 12 0 005 5L16 12l5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-3z"/>',
+  cross: '<path d="M12 4v16M4 12h16"/><rect x="3" y="3" width="18" height="18" rx="3"/>',
+  city:  '<path d="M3 21h18M5 21V8l6-4 6 4v13M9 21v-5h6v5M9 11h2M13 11h2"/>'
+};
+const icon = k => `<span class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+  aria-hidden="true">${SVG[k]||''}</svg></span>`;
+const crumb = here => `<div class="crumb"><a href="#/">Home</a><span>›</span>${esc(here)}</div>`;
+const photo = (label, cls='') => `<div class="ph ${cls}"><span>Photo — ${esc(label)}</span></div>`;
+const todo  = t => `<span class="todo">${esc(t)}</span>`;
+
+const CATS = {pilgrimage:"Pilgrimage", adventure:"Nature & Adventure", beach:"Beaches & Resorts", park:"Parks & City", farm:"Agri-tourism"};
+
+/* ---------------- HOME ---------------- */
+function home(){
+  return `
+<section class="hero">
+  <div class="photo" role="presentation"></div>
+  <div class="shell">
+    <div class="kicker">City Government of Maasin · Southern Leyte</div>
+    <h1>Welcome to Maasin City!<em>Dajon Kamo!</em></h1>
+    <p class="lead">The City of Faith and capital of Southern Leyte — declared a Tourism Zone under Republic Act No. 12236. Four pilgrimage shrines, caves and waterfalls, a coastline on the Mindanao Sea, and the gateway to the whole province.</p>
+    <div class="badges"><span>Capital of Southern Leyte</span><span>Tourism Zone · R.A. 12236</span><span>70 Barangays</span></div>
+    <div class="cta">
+      <a class="btn primary" href="#/destinations">Explore destinations →</a>
+      <a class="btn ghost" href="#/transportation">How to get here</a>
+    </div>
+  </div>
+</section>
+
+<div class="shell">
+  <section class="section">
+    <div class="sechead"><div>
+      <div class="eyebrow">Travel guide</div>
+      <h2>Everything you need, in the order you need it</h2>
+      <p>Practical information for visiting Maasin City — grouped by where you are in your trip.</p>
+    </div></div>
+    <div class="guide">
+
+      <div class="gcol">
+        <div class="gh"><span class="gnum">1</span><h3>Before You Arrive</h3></div>
+        <a class="gitem" href="#/transportation">${icon('ship')}<span>
+          <span class="gt">How to get here</span>
+          <span class="gs">Fastcraft, RoRo and cargo routes from Cebu, Surigao and Limasawa — plus bus and van from Ormoc and Tacloban.</span></span></a>
+        <a class="gitem" href="#/accommodation">${icon('bed')}<span>
+          <span class="gt">Where to stay</span>
+          <span class="gs">22 hotels, pension houses, lodges and resorts, with contact numbers and links to their own pages.</span></span></a>
+        <a class="gitem" href="#/destinations">${icon('cal')}<span>
+          <span class="gt">When to come</span>
+          <span class="gs">Sakay-Sakay in January, Ajonay on the cityhood anniversary, and the Holy Week and Christmas peaks.</span></span></a>
+        <div class="explore"><a href="#/transportation">Explore →</a></div>
+      </div>
+
+      <div class="gcol">
+        <div class="gh"><span class="gnum">2</span><h3>During Your Stay</h3></div>
+        <a class="gitem" href="#/destinations">${icon('pin')}<span>
+          <span class="gt">Tourist destinations</span>
+          <span class="gs">Four pilgrimage shrines, caves and waterfalls, beaches and springs, parks — and the sites opening next.</span></span></a>
+        <a class="gitem" href="#/transportation">${icon('wheel')}<span>
+          <span class="gt">Getting around</span>
+          <span class="gs">Motorcab fares, jeepney routes to the barangays, and the Maasin Integrated Bus Terminal.</span></span></a>
+        <a class="gitem" href="#/destinations">${icon('food')}<span>
+          <span class="gt">Eat and shop</span>
+          <span class="gs">The public market, the commercial district, and where to find local food. ${todo('ADD PAGE')}</span></span></a>
+        <div class="explore"><a href="#/destinations">Explore →</a></div>
+      </div>
+
+      <div class="gcol urgent">
+        <div class="gh"><span class="gnum">3</span><h3>If You Need Help</h3></div>
+        <a class="gitem" href="#/emergency">${icon('phone')}<span>
+          <span class="gt">Emergency numbers</span>
+          <span class="gs">Police, fire, rescue, coast guard and utilities — one tap to call from your phone.</span></span></a>
+        <a class="gitem" href="#/emergency">${icon('cross')}<span>
+          <span class="gt">Hospitals and health</span>
+          <span class="gs">One provincial hospital, two private hospitals and three city health units across the city.</span></span></a>
+        <a class="gitem" href="#/emergency">${icon('city')}<span>
+          <span class="gt">City services</span>
+          <span class="gs">Tourism assistance, social welfare, water and power — who to contact and where.</span></span></a>
+        <div class="explore"><a href="#/emergency">Explore →</a></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="facts">
+      <div class="fact"><b>85,486</b><span>Residents · PSA 2024 Census</span></div>
+      <div class="fact"><b>27</b><span>Tourist destinations, open and opening</span></div>
+      <div class="fact"><b>22</b><span>Hotels, pensions and resorts</span></div>
+      <div class="fact"><b>70</b><span>Barangays across 20,954 hectares</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sechead"><div>
+      <div class="eyebrow">What Maasin is known for</div>
+      <h2>The City of Faith</h2>
+      <p>A cathedral standing since the 17th century, a shrine inside a cave, a hill shrine above the city and a shrine on the mountain at Hanginan. People have walked to these places for generations.</p>
+    </div><a class="btn primary" href="#/destinations">See all four shrines</a></div>
+    <div class="gallery">
+      ${DESTINATIONS.filter(d=>d.cat==='pilgrimage').slice(0,3).map(cardHTML).join('')}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sechead"><div>
+      <div class="eyebrow">Mark your calendar</div>
+      <h2>Festivals &amp; peak seasons</h2>
+    </div></div>
+    <div class="portals">
+      <a class="portal" href="#/destinations">${photo("Sakay-Sakay street dancing")}
+        <div class="pbody"><h3>Sakay-Sakay Festival</h3><p>Third Sunday of January, in the same season as Cebu's Sinulog.</p></div></a>
+      <a class="portal" href="#/destinations">${photo("Ajonay Festival street presentation")}
+        <div class="pbody"><h3>Ajonay Festival</h3><p>Cityhood Anniversary — ${todo('ADD DATE')}</p></div></a>
+      <a class="portal" href="#/destinations">${photo("Holy Week procession")}
+        <div class="pbody"><h3>Holy Week</h3><p>The city fills with pilgrims and with families coming home.</p></div></a>
+      <a class="portal" href="#/destinations">${photo("Christmas lights at the plaza")}
+        <div class="pbody"><h3>Christmas &amp; New Year</h3><p>Peak season for visitors and returning residents.</p></div></a>
+    </div>
+  </section>
+</div>`;
+}
+
+function cardHTML(d){
+  const badge = d.status==='soon'
+    ? `<span class="tag badge-s">Opening soon</span>`
+    : `<span class="tag badge-e">Open to visitors</span>`;
+  return `<article class="card">
+    ${photo(d.photo)}
+    <div class="cb">
+      <h3>${esc(d.name)}</h3>
+      <div class="loc">📍 ${esc(d.brgy)}</div>
+      <p>${esc(d.desc)}${d.todo?' '+todo('NEEDS CONTENT'):''}</p>
+      <div class="cardtags"><span class="tag badge-p">${esc(CATS[d.cat]||d.cat)}</span>${badge}</div>
+    </div>
+  </article>`;
+}
+
+/* ---------------- DESTINATIONS ---------------- */
+function destinations(){
+  return `
+<div class="shell">
+  <section class="pagehead">
+    ${crumb("Tourist Destinations")}
+    <h1>Tourist Destinations</h1>
+    <p>Every identified destination in Maasin City — pilgrimage shrines, caves and waterfalls, beaches and springs, parks, and the sites the city is opening next.</p>
+  </section>
+  <section class="section">
+    <div class="filters">
+      <button class="chip" data-f="all" aria-pressed="true">All (${DESTINATIONS.length})</button>
+      <button class="chip" data-f="pilgrimage" aria-pressed="false">Pilgrimage</button>
+      <button class="chip" data-f="adventure" aria-pressed="false">Nature &amp; Adventure</button>
+      <button class="chip" data-f="beach" aria-pressed="false">Beaches &amp; Resorts</button>
+      <button class="chip" data-f="park" aria-pressed="false">Parks &amp; City</button>
+      <button class="chip" data-f="soon" aria-pressed="false">Opening soon</button>
+      <input class="search" id="dq" type="search" placeholder="Search a place or barangay…" aria-label="Search destinations">
+    </div>
+    <div class="gallery" id="dgrid"></div>
+    <div class="note"><b>For the content team:</b> every card above needs one landscape photo at 1200×800 or larger, plus a caption and photographer credit. The dashed boxes show exactly which shot goes where. Sites marked <em>Opening soon</em> must stay labelled that way until the facility is actually open to visitors.</div>
+  </section>
+</div>`;
+}
+
+function wireDestinations(){
+  const grid=document.getElementById('dgrid'), q=document.getElementById('dq');
+  let f='all';
+  function draw(){
+    const term=(q.value||'').toLowerCase().trim();
+    const out=DESTINATIONS.filter(d=>{
+      const okF = f==='all' ? true : (f==='soon' ? d.status==='soon' : d.cat===f);
+      const okQ = !term || (d.name+' '+d.brgy+' '+d.desc).toLowerCase().includes(term);
+      return okF && okQ;
+    });
+    grid.innerHTML = out.length ? out.map(cardHTML).join('')
+      : `<p class="muted">No destination matches that search.</p>`;
+  }
+  document.querySelectorAll('.chip[data-f]').forEach(b=>b.addEventListener('click',()=>{
+    f=b.dataset.f;
+    document.querySelectorAll('.chip[data-f]').forEach(x=>x.setAttribute('aria-pressed', x===b?'true':'false'));
+    draw();
+  }));
+  q.addEventListener('input',draw);
+  draw();
+}
+
+/* ---------------- TRANSPORTATION ---------------- */
+function transportation(){
+  return `
+<div class="shell">
+  <section class="pagehead">
+    ${crumb("Transportation")}
+    <h1>Transportation</h1>
+    <p>How to reach Maasin City by sea and by land, and how to move around once you arrive.</p>
+  </section>
+  <section class="section">
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-t="sea">By Sea</button>
+      <button role="tab" aria-selected="false" data-t="land">By Land — Bus, Van &amp; Jeepney</button>
+      <button role="tab" aria-selected="false" data-t="city">Around the City — Motorcab &amp; PUJ</button>
+    </div>
+
+    <div id="t-sea" class="tabpane">
+      <div class="tablewrap"><table>
+        <thead><tr><th>Operator</th><th>Type</th><th>Route</th><th>Frequency</th><th>Port</th><th>Ticket office</th></tr></thead>
+        <tbody>${SEA_ROUTES.map(r=>`<tr><td><b>${esc(r.op)}</b></td><td>${esc(r.type)}</td><td>${esc(r.route)}</td><td>${esc(r.freq)}</td><td>${esc(r.port)}</td><td class="muted">${esc(r.office)}</td></tr>`).join('')}</tbody>
+      </table></div>
+      <div class="note"><b>Needs filling in:</b> departure and arrival times, fares by class, and booking links for each operator. ${todo('ADD SCHEDULES')} ${todo('ADD FARES')} — these change often, so the developers should build this table as an editable CMS collection, not as hard-coded markup.</div>
+      <div class="sechead" style="margin-top:34px"><div><div class="eyebrow">Ports</div><h2>Where boats dock</h2></div></div>
+      <div class="portals">
+        <div class="portal">${photo("Abgao Port, vessel alongside")}<div class="pbody"><h3>Abgao Port</h3><p>The city's main seaport, serving fastcraft, RoRo and cargo.</p></div></div>
+        <div class="portal">${photo("Guadalupe Port")}<div class="pbody"><h3>Guadalupe Port</h3><p>Alternate port used during the southwest monsoon, when Abgao is unusable. Under development for the Bohol crossing.</p></div></div>
+        <div class="portal">${photo("Bilibol coastline")}<div class="pbody"><h3>Bilibol</h3><p>Identified seaport site.</p></div></div>
+        <div class="portal">${photo("Panan-awan airport works")}<div class="pbody"><h3>Maasin Airport — Panan-awan</h3><p>Under construction. Visitors currently fly into Tacloban or Cebu and continue by land or sea. ${todo('ADD STATUS')}</p></div></div>
+      </div>
+    </div>
+
+    <div id="t-land" class="tabpane hidden">
+      <div class="tablewrap"><table>
+        <thead><tr><th>Destination</th><th>Mode</th><th>Travel time</th><th>Notes</th></tr></thead>
+        <tbody>${LAND_ROUTES.map(r=>`<tr><td><b>${esc(r.dest)}</b></td><td>${esc(r.mode)}</td><td class="num">${esc(r.time)}</td><td class="muted">${esc(r.note)}</td></tr>`).join('')}</tbody>
+      </table></div>
+      <div class="note"><b>Needs filling in:</b> confirmed travel times, fares, terminal bay assignments and first/last trip times from the Maasin Integrated Bus Terminal. ${todo('ADD FARES & TIMES')}</div>
+      <div class="sechead" style="margin-top:34px"><div><div class="eyebrow">Terminal</div><h2>Maasin Integrated Bus Terminal</h2></div></div>
+      <div class="portals">
+        <div class="portal">${photo("Bus terminal frontage and bays")}<div class="pbody"><h3>Location &amp; hours</h3><p>${todo('ADD ADDRESS')} ${todo('ADD OPERATING HOURS')}</p></div></div>
+        <div class="portal">${photo("Terminal bay signage")}<div class="pbody"><h3>Bay assignments</h3><p>Which bay serves which route — ${todo('ADD BAY MAP')}</p></div></div>
+      </div>
+    </div>
+
+    <div id="t-city" class="tabpane hidden">
+      <div class="sechead"><div><div class="eyebrow">Getting around</div><h2>Motorcab</h2>
+      <p>The motorcab is how most people move around Maasin. Flag one down anywhere along the main roads, or hire one for a longer trip.</p></div></div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Trip type</th><th>Fare</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><b>Minimum fare — within the poblacion</b></td><td class="num">${todo('ADD FARE')}</td><td class="muted">Per passenger, first kilometres</td></tr>
+          <tr><td><b>Per additional kilometre</b></td><td class="num">${todo('ADD FARE')}</td><td class="muted">Per passenger</td></tr>
+          <tr><td><b>Student / senior / PWD discount</b></td><td class="num">${todo('ADD RATE')}</td><td class="muted">Present valid ID</td></tr>
+          <tr><td><b>Special trip (whole cab)</b></td><td class="num">${todo('ADD FARE')}</td><td class="muted">Agree the fare before boarding</td></tr>
+          <tr><td><b>Port / terminal to poblacion</b></td><td class="num">${todo('ADD FARE')}</td><td class="muted">Common visitor trip</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note"><b>Publish the official fare matrix here.</b> Visitors are most often overcharged on the port-to-hotel trip, and a fare table on the city's own website is the simplest protection there is. Source it from the City Transport / LTFRB-approved matrix and show the approval date so it carries authority.</div>
+
+      <div class="sechead" style="margin-top:34px"><div><div class="eyebrow">Public utility jeepney</div><h2>PUJ routes to the barangays</h2></div></div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Route</th><th>Barangays served</th><th>Fare</th><th>Trip times</th></tr></thead>
+        <tbody>
+          <tr><td><b>${todo('ROUTE NAME')}</b></td><td class="muted">${todo('BARANGAYS')}</td><td class="num">${todo('FARE')}</td><td class="muted">${todo('TIMES')}</td></tr>
+          <tr><td><b>${todo('ROUTE NAME')}</b></td><td class="muted">${todo('BARANGAYS')}</td><td class="num">${todo('FARE')}</td><td class="muted">${todo('TIMES')}</td></tr>
+          <tr><td><b>${todo('ROUTE NAME')}</b></td><td class="muted">${todo('BARANGAYS')}</td><td class="num">${todo('FARE')}</td><td class="muted">${todo('TIMES')}</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note"><b>Structure is ready, content is not.</b> Supply the approved PUJ route list — route name or number, barangays served, fare, and first and last trip. With 60 rural barangays this is the single most useful page on the site for residents, not just visitors, so it is worth getting complete. A route map graphic should sit above this table.</div>
+    </div>
+  </section>
+</div>`;
+}
+
+function wireTransport(){
+  document.querySelectorAll('.tabs [data-t]').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.tabs [data-t]').forEach(x=>x.setAttribute('aria-selected', x===b?'true':'false'));
+    ['sea','land','city'].forEach(t=>document.getElementById('t-'+t).classList.toggle('hidden', t!==b.dataset.t));
+  }));
+}
+
+/* ---------------- ACCOMMODATION ---------------- */
+function accommodation(){
+  return `
+<div class="shell">
+  <section class="pagehead">
+    ${crumb("Accommodation")}
+    <h1>Accommodation</h1>
+    <p>Hotels, pension houses, lodges and resorts in Maasin City. Most accommodation sits in Barangays Abgao, Tagnipa and Tunga-tunga, within walking distance of the cathedral and the public market.</p>
+  </section>
+  <section class="section">
+    <div class="filters">
+      <button class="chip" data-h="all" aria-pressed="true">All</button>
+      <button class="chip" data-h="Hotel" aria-pressed="false">Hotels</button>
+      <button class="chip" data-h="Pension" aria-pressed="false">Pension houses</button>
+      <button class="chip" data-h="Lodge" aria-pressed="false">Lodges &amp; apartelles</button>
+      <button class="chip" data-h="Resort" aria-pressed="false">Resorts</button>
+      <input class="search" id="hq" type="search" placeholder="Search by name or barangay…" aria-label="Search accommodation">
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Establishment</th><th>Barangay</th><th>Type</th><th>Rooms</th><th>Contact</th><th>Find them online</th></tr></thead>
+      <tbody id="hbody"></tbody>
+    </table></div>
+    <div class="note"><b>Three things before this page goes live.</b> First, room counts: only four establishments publish one, so the rest show “—”. The BPLO holds declared room counts on every business permit application — pull them and fill the column. Second, the contact numbers here came from a provincial tourism listing and have not been verified with the establishments themselves; call each one to confirm before publishing. Third, the “Find on Maps” links are generic Google Maps searches — they work, but they are a fallback. Ask each establishment for its actual Google Business Profile and Facebook Page URL and drop them into the <code>gbp</code> and <code>fb</code> fields; a claimed profile shows their real photos, hours and reviews, which is far better for them and for the visitor.</div>
+    <div class="note"><b>A simple way to collect those links:</b> add the two URL fields to the annual business permit renewal form for accommodation establishments. The BPLO already contacts every one of them once a year, and the list stays current without anyone chasing it.</div>
+  </section>
+</div>`;
+}
+
+function wireHotels(){
+  const body=document.getElementById('hbody'), q=document.getElementById('hq');
+  let f='all';
+  function draw(){
+    const term=(q.value||'').toLowerCase().trim();
+    const out=HOTELS.filter(h=>{
+      const okF = f==='all' || h.t.toLowerCase().includes(f.toLowerCase());
+      const okQ = !term || (h.n+' '+h.b).toLowerCase().includes(term);
+      return okF && okQ;
+    });
+    body.innerHTML = out.length ? out.map(h=>{
+      const maps = 'https://www.google.com/maps/search/?api=1&query=' +
+                   encodeURIComponent(h.n + ', ' + h.b + ', Maasin City, Southern Leyte');
+      const gLink = h.gbp
+        ? `<a class="hlink g" href="${esc(h.gbp)}" target="_blank" rel="noopener">★ Google profile</a>`
+        : `<a class="hlink g" href="${maps}" target="_blank" rel="noopener">📍 Find on Maps</a>`;
+      const fLink = h.fb
+        ? `<a class="hlink f" href="${esc(h.fb)}" target="_blank" rel="noopener">f Facebook</a>`
+        : `<span class="hlink" style="opacity:.55">f ${todo('ADD PAGE')}</span>`;
+      return `<tr>
+      <td><b>${esc(h.n)}</b></td>
+      <td>${esc(h.b)}</td>
+      <td class="muted">${esc(h.t)}</td>
+      <td class="num">${h.rooms ? '<b>'+h.rooms+'</b>' : '<span class="muted">—</span>'}</td>
+      <td>${h.tel ? esc(h.tel) : todo('ADD CONTACT')}</td>
+      <td><div class="hlinks">${gLink}${fLink}</div></td>
+    </tr>`;}).join('') : `<tr><td colspan="6" class="muted">No establishment matches that search.</td></tr>`;
+  }
+  document.querySelectorAll('.chip[data-h]').forEach(b=>b.addEventListener('click',()=>{
+    f=b.dataset.h;
+    document.querySelectorAll('.chip[data-h]').forEach(x=>x.setAttribute('aria-pressed', x===b?'true':'false'));
+    draw();
+  }));
+  q.addEventListener('input',draw);
+  draw();
+}
+
+/* ---------------- EMERGENCY ---------------- */
+function emergency(){
+  return `
+<div class="shell">
+  <section class="pagehead">
+    ${crumb("Emergency Contact Numbers")}
+    <h1>Emergency Contact Numbers</h1>
+    <p>Save these before you need them. On a phone, tap any number to call.</p>
+  </section>
+  ${EMERGENCY.map(g=>`
+  <section class="section">
+    <div class="sechead"><div><h2>${esc(g.g)}</h2></div></div>
+    <div class="emgrid">
+      ${g.items.map(i=>`<div class="emcard ${i.prime?'prime':''}">
+        <h3>${esc(i.n)}</h3>
+        <div class="who">${esc(i.w)}</div>
+        ${i.t ? `<a class="num" href="tel:${esc(i.t)}">${esc(i.t)}</a>` : `<div style="margin-top:6px">${todo('ADD NUMBER')}</div>`}
+      </div>`).join('')}
+    </div>
+  </section>`).join('')}
+  <section class="section">
+    <div class="note"><b>Only 911 is filled in, and deliberately so.</b> Every other number on this page must come from the office itself — a wrong emergency number on a city website is the most damaging error a government site can carry. Have each office confirm its number in writing, publish the date last verified on the page, and set a calendar reminder to re-verify every six months. Also add: a landline and a mobile for each office where both exist, and the barangay hotline list as a downloadable PDF.</div>
+  </section>
+</div>`;
+}
+
+/* ---------------- DEV NOTES ---------------- */
+function devnotes(){
+  return `
+<div class="shell">
+  <section class="pagehead">
+    ${crumb("Notes for developers")}
+    <h1>Notes for developers</h1>
+    <p>This prototype is a design reference, not production code. Here is what to keep, what to replace, and what to watch out for.</p>
+  </section>
+  <section class="section">
+    <div class="portals" style="grid-template-columns:1fr 1fr">
+      <div class="portal"><div class="pbody">
+        <h3>Keep</h3>
+        <p style="margin-top:8px">The four-portal home layout, the emergency ribbon pinned above the header, the filter-plus-search pattern on Destinations and Accommodation, the tab structure on Transportation, and the tel: links on Emergency. The colour tokens and type scale are defined as CSS custom properties at the top of the stylesheet — lift them as the site's design tokens.</p>
+      </div></div>
+      <div class="portal"><div class="pbody">
+        <h3>Replace</h3>
+        <p style="margin-top:8px">All content arrays at the top of the script — <code>DESTINATIONS</code>, <code>SEA_ROUTES</code>, <code>LAND_ROUTES</code>, <code>HOTELS</code>, <code>EMERGENCY</code> — are deliberately separated from rendering. Point them at CMS collections or API endpoints. The existing site runs on Joomla, so these map naturally to categories and custom fields.</p>
+      </div></div>
+      <div class="portal"><div class="pbody">
+        <h3>Build properly</h3>
+        <p style="margin-top:8px">Real routing (not hash-based), server-rendered pages for search engines, image optimisation with responsive <code>srcset</code> and lazy loading, and a sitemap. Every photo needs descriptive alt text — this is a government site and accessibility is a legal expectation, not a nice-to-have.</p>
+      </div></div>
+      <div class="portal"><div class="pbody">
+        <h3>Watch out for</h3>
+        <p style="margin-top:8px">Fares, schedules and emergency numbers change. Anything that changes must be editable by staff without a developer, and every such page should carry a visible “last updated” date. Do not hard-code a single fare or hotline into a template.</p>
+      </div></div>
+    </div>
+    <div class="note"><b>Bilingual from the start.</b> The header greets visitors in Bisaya and the rest of the site is in English. Decide early whether the site is bilingual throughout — if yes, build the language switcher into the header now and structure content with a language field, because retrofitting it later means touching every record.</div>
+    <div class="note"><b>The welcome survey.</b> It appears once per visitor, blocks scrolling until answered, and stores the choice in <code>localStorage</code> under <code>maasin_visitor_type</code> so returning visitors are not asked twice. <code>recordAnswer()</code> has the POST call commented in — wire it to an endpoint that stores only the choice, a timestamp and the landing page. One deliberate exception is built in: <b>the survey never appears if someone lands directly on the Emergency page</b>, and the modal itself carries an emergency escape link. Do not remove either. A person looking for a rescue number must never meet a questionnaire first.</div>
+    <div class="note"><b>Be realistic about survey data.</b> A forced gate does collect from nearly everyone, but it also raises bounce rate, and some share of answers will be mis-taps from people who just want past it. Treat the result as a rough visitor mix, not a census — and watch the bounce rate for the first month. If it climbs sharply, make the modal dismissible and accept a lower response rate for a better-behaved site. Under the Data Privacy Act, keep the responses anonymous, and link a privacy notice from the modal before launch.</div>
+    <div class="note"><b>Performance matters more here than usual.</b> Many residents in the 60 rural barangays browse on mobile data, some over Starlink links shared across a barangay. Keep pages under 1 MB, compress every photo, and make sure the Emergency page in particular loads fast and works on a slow connection.</div>
+  </section>
+</div>`;
+}
+
+/* ---------------- ROUTER ---------------- */
+const ROUTES = {
+  '/':            {render:home,           wire:null},
+  '/destinations':{render:destinations,   wire:wireDestinations},
+  '/transportation':{render:transportation, wire:wireTransport},
+  '/accommodation':{render:accommodation, wire:wireHotels},
+  '/emergency':   {render:emergency,      wire:null},
+  '/devnotes':    {render:devnotes,       wire:null}
+};
+
+function route(){
+  const path = (location.hash || '#/').slice(1) || '/';
+  const r = ROUTES[path] || ROUTES['/'];
+  document.getElementById('app').innerHTML = r.render();
+  if (r.wire) r.wire();
+  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on', a.dataset.r===path));
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange', route);
+route();
+
+/* ============================================================
+   WELCOME SURVEY — visitor-type gate
+   Shows once per visitor, blocks scrolling until answered.
+   DELIBERATE EXCEPTION: never shown when the visitor lands
+   directly on #/emergency. Someone reaching this site during an
+   emergency must not meet a survey first.
+   ============================================================ */
+const VISITOR_TYPES = [
+  {v:"relative",  t:"I am visiting a relative",  s:"Balik-bayan, family visit, fiesta or reunion"},
+  {v:"resident",  t:"I live here",               s:"Maasin City resident"},
+  {v:"transit",   t:"I am just in transit",      s:"Passing through to another town or island"},
+  {v:"tourist",   t:"I am a tourist",            s:"Here to visit the city's destinations"}
+];
+const SURVEY_KEY = 'maasin_visitor_type';
+
+function alreadyAnswered(){
+  try { return !!localStorage.getItem(SURVEY_KEY); } catch(e){ return false; }
+}
+function recordAnswer(value){
+  try { localStorage.setItem(SURVEY_KEY, value); } catch(e){ /* private mode — proceed anyway */ }
+  /* DEVELOPERS: send the response to the server here. No personal data is collected —
+     just the choice, a timestamp and the landing page.
+       fetch('/api/visitor-survey', {
+         method:'POST', headers:{'Content-Type':'application/json'},
+         body: JSON.stringify({ type:value, at:new Date().toISOString(), landing:location.hash||'#/' })
+       });
+     Aggregate by month and the Tourism Office gets a visitor-mix report for free. */
+  console.log('[visitor-survey]', {type:value, at:new Date().toISOString(), landing:location.hash||'#/'});
+}
+
+function showSurvey(){
+  if (alreadyAnswered()) return;
+  if ((location.hash||'') === '#/emergency') return;   // never gate an emergency
+
+  const scrim = document.createElement('div');
+  scrim.className = 'scrim';
+  scrim.setAttribute('role','dialog');
+  scrim.setAttribute('aria-modal','true');
+  scrim.setAttribute('aria-labelledby','svTitle');
+  scrim.innerHTML = `
+    <div class="modal">
+      <div class="mhead">
+        <div class="k">Maasin City · Southern Leyte</div>
+        <h2 id="svTitle">Welcome to Maasin City! Dajon Kamo!</h2>
+        <p>Before you explore, one quick question. Your answer helps the city understand who visits and plan better services — it takes one tap.</p>
+      </div>
+      <div class="mbody">
+        <fieldset>
+          <legend>What brings you to Maasin today?</legend>
+          <div class="opts">
+            ${VISITOR_TYPES.map((o,i)=>`
+              <label class="opt" for="vt${i}">
+                <input type="radio" name="visitortype" id="vt${i}" value="${o.v}">
+                <span class="ot">${o.t}<span class="os">${o.s}</span></span>
+              </label>`).join('')}
+          </div>
+        </fieldset>
+        <div class="mfoot">
+          <button class="btn primary" id="svGo" disabled>Proceed to the site →</button>
+          <a class="hlink" href="#/emergency" id="svEm" style="color:var(--alert)">🚨 I need emergency numbers</a>
+        </div>
+        <p class="privacy">We record only your answer — no name, no email, nothing that identifies you.
+        Responses are counted in totals to help plan tourism and city services.</p>
+      </div>
+    </div>`;
+
+  document.body.appendChild(scrim);
+  document.body.classList.add('locked');
+
+  const go = scrim.querySelector('#svGo');
+  scrim.querySelectorAll('input[name="visitortype"]').forEach(r=>{
+    r.addEventListener('change', ()=>{ go.disabled = false; });
+  });
+  go.addEventListener('click', ()=>{
+    const sel = scrim.querySelector('input[name="visitortype"]:checked');
+    if (!sel) return;
+    recordAnswer(sel.value);
+    close();
+  });
+  scrim.querySelector('#svEm').addEventListener('click', ()=>{ close(); });
+
+  function close(){
+    scrim.remove();
+    document.body.classList.remove('locked');
+  }
+  setTimeout(()=>{ const f = scrim.querySelector('input[name="visitortype"]'); if(f) f.focus(); }, 60);
+}
+showSurvey();
+</script>
+
+</body>
+</html>
