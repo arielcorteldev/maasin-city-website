@@ -661,6 +661,15 @@
         color: var(--secondary);
         border-bottom-color: var(--secondary);
       }
+      .featured-row {
+        background: var(--sun-wash);
+        font-weight: 600;
+        font-size: 1.2em;
+        color: var(--secondary);
+      }
+      .featured-row td:first-child {
+        border-left: 3px solid var(--sun);
+      }
 
       /* ---------- emergency ---------- */
       .emgrid {
@@ -1408,7 +1417,7 @@
           status: "open",
           desc: "The city centre's principal gathering place beside the cathedral — where civic life happens.",
           photo: "Plaza by day and lit at night",
-          img: "assets/images/plaza.jpg"
+          img: "assets/images/plaza.jpg",
         },
         // {
         //   name: "Maasin Bayview Park",
@@ -1425,7 +1434,7 @@
           status: "open",
           desc: "Eco-tourism, outdoor recreation and the venue for organised community events.",
           photo: "Forest park grounds",
-          img: "assets/images/danao2.jpg"
+          img: "assets/images/danao2.jpg",
         },
 
         // --- Opening next (CDP Table 55) ---
@@ -1772,6 +1781,16 @@
    own profile URL as each one confirms it. */
       const HOTELS = [
         {
+          n: "Villa Romana Hotel",
+          b: "Brgy. Abgao",
+          t: "Hotel",
+          rooms: 12,
+          tel: "0917-323-7610 / (053) 570-8304",
+          gbp: "",
+          fb: "",
+          featured: true,
+        },
+        {
           n: "Vismin GV Hotel",
           b: "Brgy. Abgao",
           t: "Hotel",
@@ -1790,15 +1809,6 @@
           fb: "",
         },
         {
-          n: "Villa Romana Hotel",
-          b: "Brgy. Abgao",
-          t: "Hotel",
-          rooms: 12,
-          tel: "0917-323-7610 / (053) 570-8304",
-          gbp: "",
-          fb: "",
-        },
-        {
           n: "Caimito Beach Hotel",
           b: "Brgy. Pasay",
           t: "Beach hotel",
@@ -1807,7 +1817,13 @@
           gbp: "",
           fb: "",
         },
-        { n: "DW Pension", b: "Brgy. Abgao", t: "Pension", rooms: 10, tel: "09947833241" },
+        {
+          n: "DW Pension",
+          b: "Brgy. Abgao",
+          t: "Pension",
+          rooms: 10,
+          tel: "09947833241",
+        },
         {
           n: "A Square Pension",
           b: "Brgy. Tunga-tunga",
@@ -1974,8 +1990,16 @@
               w: "Government hospital",
               t: "09924598559",
             },
-            { n: "Maasin MedCity", w: "Private hospital", t: "0977-204-1783 / (053) 381-2371" },
-            { n: "Living Hope Hospital", w: "Private hospital", t: "(053) 570-9880" },
+            {
+              n: "Maasin MedCity",
+              w: "Private hospital",
+              t: "0977-204-1783 / (053) 381-2371",
+            },
+            {
+              n: "Living Hope Hospital",
+              w: "Private hospital",
+              t: "(053) 570-9880",
+            },
             {
               n: "City Health Office",
               w: "City Health Units I, II and III",
@@ -1991,7 +2015,11 @@
               w: "Southern Leyte Electric Cooperative — power outages",
               t: "0917-712-0947",
             },
-            { n: "Maasin Water District", w: "Water supply", t: "0998-590-3379" },
+            {
+              n: "Maasin Water District",
+              w: "Water supply",
+              t: "0998-590-3379",
+            },
             {
               n: "City Social Welfare & Development Office",
               w: "Assistance and evacuation support",
@@ -2393,10 +2421,10 @@
                   const gLink = h.gbp
                     ? `<a class="hlink g" href="${esc(h.gbp)}" target="_blank" rel="noopener">★ Google profile</a>`
                     : `<a class="hlink g" href="${maps}" target="_blank" rel="noopener">📍 Find on Maps</a>`;
-                    const fLink = h.fb
+                  const fLink = h.fb
                     ? `<a class="hlink f" href="${esc(h.fb)}" target="_blank" rel="noopener">f Facebook</a>`
                     : `<span class="hlink" style="opacity:.55">f ${todo("ADD PAGE")}</span>`;
-                  return `<tr>
+                  return `<tr class="${h.featured ? "featured-row" : ""}">
       <td><b>${esc(h.n)}</b></td>
       <td>${esc(h.b)}</td>
       <td class="muted">${esc(h.t)}</td>
