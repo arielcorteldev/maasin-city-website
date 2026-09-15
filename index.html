@@ -191,6 +191,29 @@
         color: var(--ink-3);
         letter-spacing: 0.02em;
       }
+      .burger {
+        display: none;
+        flex: none;
+        width: 38px;
+        height: 38px;
+        border: 1px solid var(--rule);
+        border-radius: 9px;
+        background: var(--surface);
+        cursor: pointer;
+        padding: 0;
+        margin-left: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+      .burger span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: var(--ink);
+        border-radius: 2px;
+      }
       nav.main {
         margin-left: auto;
         display: flex;
@@ -1064,6 +1087,9 @@
         .facts {
           grid-template-columns: repeat(2, 1fr);
         }
+        .guide {
+          grid-template-columns: repeat(2, 1fr);
+        }
         footer.site .shell {
           grid-template-columns: 1fr 1fr;
         }
@@ -1072,20 +1098,32 @@
         .bar {
           flex-wrap: wrap;
         }
+        .burger {
+          display: flex;
+        }
         nav.main {
-          margin-left: 0;
-          width: 100%;
-          overflow-x: auto;
-          flex-wrap: nowrap;
-          padding-bottom: 2px;
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--surface);
+          border-bottom: 1px solid var(--rule);
+          flex-direction: column;
+          padding: 8px 16px 14px;
+          z-index: 50;
+        }
+        nav.main.open {
+          display: flex;
         }
         nav.main a {
-          white-space: nowrap;
+          padding: 12px 8px;
         }
         .portals,
         .gallery,
         .emgrid,
-        .facts {
+        .facts,
+        .guide {
           grid-template-columns: 1fr;
         }
         footer.site .shell {
@@ -1125,6 +1163,16 @@
             ><b>Maasin City</b><span>Southern Leyte · Philippines</span></span
           >
         </a>
+        <button
+          id="navToggle"
+          class="burger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav"
+          aria-label="Open menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
         <nav class="main" id="nav">
           <a href="#/" data-r="/">Home</a>
           <a href="#/destinations" data-r="/destinations"
@@ -1215,6 +1263,22 @@
         localStorage.setItem("maasin_lang", LANG);
         applyNavLang();
         route();
+      }
+
+      function initBurgerMenu() {
+        const navToggle = document.getElementById("navToggle");
+        const nav = document.getElementById("nav");
+        if (!navToggle || !nav) return;
+        navToggle.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("open");
+          navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+        nav.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            nav.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          }),
+        );
       }
 
       const DESTINATIONS = [
@@ -2280,7 +2344,7 @@
         <thead><tr><th>Type</th><th>Destination</th><th>Via</th><th>First Trip</th><th>Last Trip</th><th>Fare</th><th>Rate Type</th><th>Operators</th></tr></thead>
         <tbody>${LAND_ROUTES.map((r) => `<tr><td><b>${esc(r.type)}</b></td><td>${esc(r.dest)}</td><td>${esc(r.via)}</td><td>${esc(r.first)}</td><td>${esc(r.last)}</td><td class="num">${esc(r.fare)}</td><td>${esc(r.rateType)}</td><td class="muted">${esc(r.ops)}</td></tr>`).join("")}</tbody>
       </table></div>
-      <div class="note"><b>Needs filling in:</b> confirmed travel times, fares, terminal bay assignments and first/last trip times from the Maasin Integrated Bus Terminal. ${todo("ADD FARES & TIMES")}</div>
+      
       <div class="sechead" style="margin-top:34px"><div><div class="eyebrow">Terminal</div><h2>Maasin Integrated Bus Terminal</h2></div></div>
       <div class="portals">
         <div class="portal">${photo("Bus terminal frontage and bays")}<div class="pbody"><h3>Location &amp; hours</h3><p>${todo("ADD ADDRESS")} ${todo("ADD OPERATING HOURS")}</p></div></div>
@@ -2297,7 +2361,7 @@
           ${MOTORCAB_FARES.map((r) => `<tr><td><b>${esc(r.route)}</b></td><td>${esc(r.fare)}</td><td class="num">${esc(r.senior)}</td></tr>`).join("")}
         </tbody>
       </table></div>
-      <div class="note"><b>Publish the official fare matrix here.</b> Visitors are most often overcharged on the port-to-hotel trip, and a fare table on the city's own website is the simplest protection there is. Source it from the City Transport / LTFRB-approved matrix and show the approval date so it carries authority.</div>
+      
 
     </div>
   </section>
@@ -2489,6 +2553,7 @@
       window.addEventListener("hashchange", route);
       route();
       applyNavLang();
+      initBurgerMenu();
 
       /* ============================================================
    WELCOME SURVEY — visitor-type gate
