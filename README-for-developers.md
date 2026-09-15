@@ -8,14 +8,14 @@ This is a **design and content reference**, not production code. It exists so th
 
 ## What's in it
 
-| Route | Page |
-|---|---|
-| `#/` | Landing page — trip-stage guide (Before You Arrive / During Your Stay / If You Need Help) |
-| `#/destinations` | Tourist destinations gallery, filter + search, 27 sites |
-| `#/transportation` | Three tabs: By Sea, By Land, Around the City (motorcab + PUJ) |
-| `#/accommodation` | 22 establishments, filter + search, links to Google and Facebook |
-| `#/emergency` | Emergency hotlines grouped by urgency, `tel:` links |
-| `#/devnotes` | Implementation notes (also summarised below) |
+| Route              | Page                                                                                      |
+| ------------------ | ----------------------------------------------------------------------------------------- |
+| `#/`               | Landing page — trip-stage guide (Before You Arrive / During Your Stay / If You Need Help) |
+| `#/destinations`   | Tourist destinations gallery, filter + search, 27 sites                                   |
+| `#/transportation` | Three tabs: By Sea, By Land, Around the City (motorcab + PUJ)                             |
+| `#/accommodation`  | 22 establishments, filter + search, links to Google and Facebook                          |
+| `#/emergency`      | Emergency hotlines grouped by urgency, `tel:` links                                       |
+| `#/devnotes`       | Implementation notes (also summarised below)                                              |
 
 ---
 
@@ -24,12 +24,12 @@ This is a **design and content reference**, not production code. It exists so th
 All content sits in plain arrays at the top of the `<script>` block, deliberately separated from rendering. **These are what you replace with CMS collections or API endpoints.**
 
 ```js
-DESTINATIONS   // name, brgy, cat, status, desc, photo
-SEA_ROUTES     // op, type, route, freq, port, office
-LAND_ROUTES    // dest, mode, time, note
-HOTELS         // n, b, t, rooms, tel, gbp, fb
-EMERGENCY      // grouped: g, items[{n, w, t, prime}]
-VISITOR_TYPES  // welcome survey options
+DESTINATIONS; // name, brgy, cat, status, desc, photo
+SEA_ROUTES; // op, type, route, freq, port, office
+LAND_ROUTES; // dest, mode, time, note
+HOTELS; // n, b, t, rooms, tel, gbp, fb
+EMERGENCY; // grouped: g, items[{n, w, t, prime}]
+VISITOR_TYPES; // welcome survey options
 ```
 
 The existing site runs on **Joomla**, so these map naturally onto categories with custom fields. Nothing in the rendering functions needs to change when the data source does.
@@ -49,10 +49,14 @@ Appears once per visitor, locks scrolling until answered, stores the choice in `
 `recordAnswer()` has the POST call commented in — wire it to an endpoint that stores **only** the choice, a timestamp and the landing page. No personal data.
 
 ```js
-fetch('/api/visitor-survey', {
-  method: 'POST',
-  headers: {'Content-Type': 'application/json'},
-  body: JSON.stringify({ type: value, at: new Date().toISOString(), landing: location.hash })
+fetch("/api/visitor-survey", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    type: value,
+    at: new Date().toISOString(),
+    landing: location.hash,
+  }),
 });
 ```
 
@@ -127,8 +131,6 @@ The header greets visitors in Bisaya and the rest of the site is English. Decide
 
 Also confirm the spelling: the prototype uses **"Dajon Kamo!"** as supplied. The more common Cebuano spelling is **"Dayon Kamo!"**
 
-
-
 <div class="note"><b>For the content team:</b> every card above needs one landscape photo at 1200×800 or larger, plus a caption and photographer credit. The dashed boxes show exactly which shot goes where. Sites marked <em>Opening soon</em> must stay labelled that way until the facility is actually open to visitors.</div>
 
 <div class="note"><b>Needs filling in:</b> departure and arrival times, fares by class, and booking links for each operator. ${todo("ADD SCHEDULES")} ${todo("ADD FARES")} — these change often, so the developers should build this table as an editable CMS collection, not as hard-coded markup.</div>
@@ -139,3 +141,11 @@ Also confirm the spelling: the prototype uses **"Dajon Kamo!"** as supplied. The
 <div class="note"><b>Needs filling in:</b> confirmed travel times, fares, terminal bay assignments and first/last trip times from the Maasin Integrated Bus Terminal. ${todo("ADD FARES & TIMES")}</div>
 
 <div class="note"><b>Publish the official fare matrix here.</b> Visitors are most often overcharged on the port-to-hotel trip, and a fare table on the city's own website is the simplest protection there is. Source it from the City Transport / LTFRB-approved matrix and show the approval date so it carries authority.</div>
+
+TO BE ADDED BACK:
+
+<div class="sechead" style="margin-top:34px"><div><div class="eyebrow">Terminal</div><h2>Maasin Integrated Bus Terminal</h2></div></div>
+      <div class="portals">
+        <div class="portal">${photo("Bus terminal frontage and bays")}<div class="pbody"><h3>Location &amp; hours</h3><p>${todo("ADD ADDRESS")} ${todo("ADD OPERATING HOURS")}</p></div></div>
+        <div class="portal">${photo("Terminal bay signage")}<div class="pbody"><h3>Bay assignments</h3><p>Which bay serves which route — ${todo("ADD BAY MAP")}</p></div></div>
+      </div>
