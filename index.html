@@ -290,6 +290,17 @@
         color: #f6c88a;
         display: block;
       }
+      .awards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        align-items: center;
+        margin: 18px 0;
+      }
+      .awards img {
+        height: 75px;
+        width: auto;
+      }
       .hero p.lead {
         margin: 16px 0 0;
         max-width: 56ch;
@@ -2122,6 +2133,11 @@
   <div class="shell">
     <div class="kicker">${tr(HERO.kicker)}</div>
     <h1>${tr(HERO.h1)}<em>Dajon Kamo!</em></h1>
+    <div class="awards">
+      <img src="assets/images/seal-good-governance.png" alt="Seal of Good Local Governance, 2017–2024">
+      <img src="assets/images/iso-9001.png" alt="ISO 9001:2015 Certified, 2025–2028">
+      <img src="assets/images/gawad-kalasag.png" alt="Gawad Kalasag Award, 2024">
+    </div>
     <p class="lead">${tr(HERO.lead)}</p>
     <div class="badges"><span>${tr(HERO.badge1)}</span><span>${tr(HERO.badge2)}</span><span>${tr(HERO.badge3)}</span></div>
     <div class="cta">
